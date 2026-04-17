@@ -1,0 +1,23 @@
+# Name of the Conda environment
+# This is what you’ll use with: conda activate seqkit2026
+name: seqkit2026
+
+# Channels are sources where Conda looks for packages
+# Order matters: Conda searches top → bottom
+channels:
+  # Community-maintained packages (very up-to-date, widely used)
+  - conda-forge
+
+  # Bioinformatics-specific packages (built on top of conda-forge)
+  - bioconda
+
+# List of packages to install into the environment
+dependencies:
+  # Exact Python version (good for reproducibility)
+  # Ensures everyone in the class uses the same interpreter
+  - python==3.12.8
+
+  # pip is included so we can install packages from PyPI directly and use conda only if absolutely needed.
+  # Allows more granular control of the environment reproducibility if we avoid using conda as a package installer
+  # (e.g. your own package or things from PyPI)
+  - pip
