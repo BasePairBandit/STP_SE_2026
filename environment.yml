@@ -21,3 +21,6 @@ dependencies:
   # Allows more granular control of the environment reproducibility if we avoid using conda as a package installer
   # (e.g. your own package or things from PyPI)
   - pip
+
+  #pytest added here to do unit/integration testing
+  - pytest
