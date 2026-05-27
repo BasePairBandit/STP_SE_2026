@@ -1,0 +1,98 @@
+# =========================
+# Project metadata (PEP 621)
+# =========================
+[project]
+
+# The name of your package as it will appear on PyPI and in your installed packages
+name = "SeqKitSTP"
+
+# Fields that are NOT defined here but loaded dynamically elsewhere
+# In this case, dependencies are read from requirements.txt, and the code to do the reading from reuirements.txt
+# is found below
+dynamic = ["dependencies"]
+
+# Static version number (simple)
+# You manually update this as you release new versions
+# We can make versioning dynamic
+version = "0.0.1"
+
+# Short description of what your package does
+description = "Toolkit that manipulates DNA (and other) sequences"
+
+# License file included in the project
+license = {file = "LICENSE.txt"}
+
+# Authors of the package
+authors = [{name = "VariantValidator Contributors", email = "admin@variantvalidator.org"}]
+
+# README file used as the long description (e.g. on PyPI)
+readme = "README.md"
+
+# Keywords to help people find your package
+keywords = [
+    "bioinformatics",
+    "DNA Sequence",
+]
+
+# Minimum Python version required to run this package
+requires-python = ">=3.12"
+
+# Classifiers help categorise your package on PyPI
+# These are mainly for discoverability and filtering
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Build Tools",
+    "License :: OSI Approved :: GNU Affero General Public License v3 or later (AGPLv3+)",
+    # NOTE: This should ideally match requires-python
+    "Programming Language :: Python :: 3.12"
+]
+
+# =====================================
+# Dynamic configuration (setuptools)
+# =====================================
+[tool.setuptools.dynamic]
+
+# Instead of listing dependencies here,
+# they are read from requirements.txt
+# This avoids duplication and keeps things DRY
+# You can add a manual list of dependencies, but we will use requirements.txt to keep things easy to maintain
+# and much simpler to have complete and utter control over our environment using pip freeze
+dependencies = {file = ["requirements.txt"]}
+
+# =====================================
+# (Optional) setuptools_scm configuration
+# =====================================
+# This would allow automatic versioning from Git tags,
+# BUT it is NOT currently used because version is static.
+# Keep it for now as we may talk about Dynamic Versioning if time allows
+[tool.setuptools_scm]
+
+# =====================================
+# Package discovery
+# =====================================
+[tool.setuptools.packages.find]
+
+# Where setuptools should look for Python packages
+# "." means the root directory
+where = ["."]
+
+# Only include packages that match this pattern
+# (e.g. SeqKitSTP and any subpackages)
+include = ["SeqKitSTP*"]
+
+# =====================================
+# Build system configuration
+# =====================================
+[build-system]
+
+# Build-time dependencies required to package your project
+# setuptools = build backend
+# wheel = allows building .whl files
+# setuptools_scm = only needed if using dynamic versioning
+requires = ["setuptools>=45", "setuptools_scm[toml]>=6.2", "wheel"]
+
+# The tool used to build your package
+build-backend = "setuptools.build_meta"
+
+# Once configured, install your software in editable mode `pip install -e .`

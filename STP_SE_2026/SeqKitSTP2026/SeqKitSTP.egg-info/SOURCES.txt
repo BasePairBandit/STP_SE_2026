@@ -1,0 +1,17 @@
+README.md
+environment.yml
+pyproject.toml
+SeqKitSTP/__init__.py
+SeqKitSTP/logger.py
+SeqKitSTP/main.py
+SeqKitSTP/settings.py
+SeqKitSTP.egg-info/PKG-INFO
+SeqKitSTP.egg-info/SOURCES.txt
+SeqKitSTP.egg-info/dependency_links.txt
+SeqKitSTP.egg-info/top_level.txt
+SeqKitSTP/modules/__init__.py
+SeqKitSTP/modules/blockify_sequence.py
+SeqKitSTP/modules/genify_sequence.py
+SeqKitSTP/modules/logging_demo.py
+SeqKitSTP/utils/__init__.py
+tests/test_blockify_sequence.py
