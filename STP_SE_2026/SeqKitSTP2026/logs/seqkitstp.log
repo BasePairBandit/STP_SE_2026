@@ -1,202 +1,22 @@
-2026-05-13 20:05:23,833 | INFO | SeqKitSTP | main.py:9 | Initiating string_to_genbank.py
-2026-05-13 20:05:37,961 | INFO | SeqKitSTP | main.py:17 | Writing to output file: blocked_sequence.txt
-2026-05-13 20:05:37,961 | INFO | SeqKitSTP | main.py:21 | Complete
-2026-05-13 20:18:47,292 | INFO | SeqKitSTP | main.py:9 | Initiating string_to_genbank.py
-2026-05-13 20:18:54,122 | ERROR | SeqKitSTP | string_to_genbank.py:7 | Invalid block size, block size must not exceed the length of the DNA sequence
-2026-05-13 20:18:54,123 | INFO | SeqKitSTP | main.py:17 | Writing to output file: blocked_sequence.txt
-2026-05-13 20:18:54,123 | INFO | SeqKitSTP | main.py:21 | Complete
-2026-05-13 20:19:35,289 | INFO | SeqKitSTP | main.py:9 | Initiating string_to_genbank.py
-2026-05-13 20:19:39,012 | INFO | SeqKitSTP | main.py:17 | Writing to output file: blocked_sequence.txt
-2026-05-13 20:19:39,012 | INFO | SeqKitSTP | main.py:21 | Complete
-2026-05-13 20:20:04,961 | INFO | SeqKitSTP | main.py:9 | Initiating string_to_genbank.py
-2026-05-13 20:20:19,173 | INFO | SeqKitSTP | main.py:17 | Writing to output file: blocked_sequence.txt
-2026-05-13 20:20:19,174 | INFO | SeqKitSTP | main.py:21 | Complete
-2026-05-13 20:51:18,045 | INFO | SeqKitSTP | main.py:11 | Initiating string_to_genbank.py
-2026-05-13 20:51:42,174 | INFO | SeqKitSTP | main.py:19 | Writing to output file: blocked_sequence.txt
-2026-05-13 20:52:11,508 | INFO | SeqKitSTP | main.py:11 | Initiating string_to_genbank.py
-2026-05-13 20:52:15,345 | INFO | SeqKitSTP | main.py:19 | Writing to output file: blocked_sequence.txt
-2026-05-13 20:52:43,007 | INFO | SeqKitSTP | main.py:11 | Initiating string_to_genbank.py
-2026-05-13 20:52:46,184 | INFO | SeqKitSTP | main.py:19 | Writing to output file: blocked_sequence.txt
-2026-05-13 20:53:06,776 | INFO | SeqKitSTP | main.py:11 | Initiating string_to_genbank.py
-2026-05-13 20:53:13,789 | INFO | SeqKitSTP | main.py:19 | Writing to output file: blocked_sequence.txt
-2026-05-13 20:53:13,789 | INFO | SeqKitSTP | main.py:27 | Writing to output file: blocked_sequence.txt
-2026-05-13 20:53:46,377 | INFO | SeqKitSTP | main.py:11 | Initiating string_to_genbank.py
-2026-05-13 20:53:49,773 | INFO | SeqKitSTP | main.py:19 | Writing to output file: blocked_sequence.txt
-2026-05-13 20:53:49,773 | INFO | SeqKitSTP | main.py:27 | Writing to output file: blocked_sequence.txt
-2026-05-13 20:53:49,774 | INFO | SeqKitSTP | main.py:30 | Complete
-2026-05-13 20:55:13,239 | INFO | SeqKitSTP | main.py:11 | Initiating string_to_genbank.py
-2026-05-13 20:55:17,729 | INFO | SeqKitSTP | main.py:19 | Writing to output file: blocked_sequence.txt
-2026-05-13 20:55:17,730 | INFO | SeqKitSTP | main.py:27 | Writing to output file: genbank_sequence.txt
-2026-05-13 20:55:17,730 | INFO | SeqKitSTP | main.py:30 | Complete
-2026-05-13 20:59:25,364 | INFO | SeqKitSTP | main.py:11 | Initiating string_to_genbank.py
-2026-05-13 20:59:29,357 | INFO | SeqKitSTP | main.py:19 | Writing to output file: blocked_sequence.txt
-2026-05-13 20:59:29,358 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-13 20:59:29,358 | INFO | SeqKitSTP | main.py:27 | Writing to output file: genbank_sequence.txt
-2026-05-13 20:59:29,358 | INFO | SeqKitSTP | main.py:30 | Complete
-2026-05-13 22:39:03,305 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-13 22:39:08,719 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-13 22:39:08,719 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-13 22:39:08,719 | INFO | SeqKitSTP | main.py:28 | Initiating genifying the blocked sequence
-2026-05-13 22:39:08,719 | INFO | SeqKitSTP | main.py:32 | Writing to output file: genbank_sequence.txt
-2026-05-13 22:39:08,719 | INFO | SeqKitSTP | main.py:36 | Complete
-2026-05-15 10:36:25,082 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-15 10:36:45,041 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-15 10:36:53,210 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-15 10:36:53,210 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-15 10:36:53,211 | INFO | SeqKitSTP | main.py:28 | Initiating genifying the blocked sequence
-2026-05-15 10:36:53,211 | INFO | SeqKitSTP | main.py:32 | Writing to output file: genbank_sequence.txt
-2026-05-15 10:36:53,211 | INFO | SeqKitSTP | main.py:36 | Complete
-2026-05-15 10:39:02,450 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-15 10:39:23,976 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-15 10:39:23,976 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-15 10:39:23,977 | INFO | SeqKitSTP | main.py:28 | Initiating genifying the blocked sequence
-2026-05-15 10:39:23,977 | INFO | SeqKitSTP | main.py:32 | Writing to output file: genbank_sequence.txt
-2026-05-15 10:39:23,977 | INFO | SeqKitSTP | main.py:36 | Complete
-2026-05-23 16:15:46,295 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-23 16:16:24,981 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-23 16:16:24,982 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-23 16:16:29,706 | INFO | SeqKitSTP | main.py:28 | Initiating genifying the blocked sequence
-2026-05-23 16:16:29,706 | INFO | SeqKitSTP | main.py:32 | Writing to output file: genbank_sequence.txt
-2026-05-23 16:16:29,707 | INFO | SeqKitSTP | main.py:36 | Complete
-2026-05-23 16:17:10,408 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-23 16:17:15,008 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-23 16:17:15,008 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-23 16:17:16,689 | INFO | SeqKitSTP | main.py:28 | Initiating genifying the blocked sequence
-2026-05-23 16:17:16,689 | INFO | SeqKitSTP | main.py:32 | Writing to output file: genbank_sequence.txt
-2026-05-23 16:17:16,690 | INFO | SeqKitSTP | main.py:36 | Complete
-2026-05-23 16:17:29,806 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-23 16:17:34,365 | ERROR | SeqKitSTP | blockify_sequence.py:7 | Invalid block size, block size must not exceed the length of the DNA sequence
-2026-05-23 16:17:34,366 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-23 16:17:34,366 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-23 16:17:54,593 | INFO | SeqKitSTP | main.py:28 | Initiating genifying the blocked sequence
-2026-05-23 16:17:54,594 | INFO | SeqKitSTP | main.py:32 | Writing to output file: genbank_sequence.txt
-2026-05-23 16:17:54,594 | INFO | SeqKitSTP | main.py:36 | Complete
-2026-05-23 16:17:57,105 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-23 16:18:04,145 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-23 16:18:04,145 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-23 16:18:07,858 | INFO | SeqKitSTP | main.py:28 | Initiating genifying the blocked sequence
-2026-05-23 16:18:07,858 | INFO | SeqKitSTP | main.py:32 | Writing to output file: genbank_sequence.txt
-2026-05-23 16:18:07,859 | INFO | SeqKitSTP | main.py:36 | Complete
-2026-05-23 16:18:32,217 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-23 16:18:39,081 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-23 16:18:39,081 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-23 16:18:42,224 | INFO | SeqKitSTP | main.py:28 | Initiating genifying the blocked sequence
-2026-05-23 16:18:42,224 | INFO | SeqKitSTP | main.py:32 | Writing to output file: genbank_sequence.txt
-2026-05-23 16:18:42,225 | INFO | SeqKitSTP | main.py:36 | Complete
-2026-05-23 16:18:55,257 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-23 16:18:59,199 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-23 16:18:59,199 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-23 16:19:00,178 | INFO | SeqKitSTP | main.py:28 | Initiating genifying the blocked sequence
-2026-05-23 16:19:00,178 | INFO | SeqKitSTP | main.py:32 | Writing to output file: genbank_sequence.txt
-2026-05-23 16:19:00,179 | INFO | SeqKitSTP | main.py:36 | Complete
-2026-05-23 16:19:11,151 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-23 16:22:04,947 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-23 16:22:04,948 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-23 16:22:09,128 | INFO | SeqKitSTP | main.py:28 | Initiating genifying the blocked sequence
-2026-05-23 16:22:09,128 | INFO | SeqKitSTP | main.py:32 | Writing to output file: genbank_sequence.txt
-2026-05-23 16:22:09,129 | INFO | SeqKitSTP | main.py:36 | Complete
-2026-05-23 16:22:23,966 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-23 16:22:41,276 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-23 16:22:41,276 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-23 16:22:45,020 | INFO | SeqKitSTP | main.py:28 | Initiating genifying the blocked sequence
-2026-05-23 16:22:45,020 | INFO | SeqKitSTP | main.py:32 | Writing to output file: genbank_sequence.txt
-2026-05-23 16:22:45,020 | INFO | SeqKitSTP | main.py:36 | Complete
-2026-05-23 16:23:10,098 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-23 16:23:17,377 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-23 16:23:17,378 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-23 16:23:30,590 | INFO | SeqKitSTP | main.py:28 | Initiating genifying the blocked sequence
-2026-05-23 16:23:30,590 | INFO | SeqKitSTP | main.py:32 | Writing to output file: genbank_sequence.txt
-2026-05-23 16:23:30,591 | INFO | SeqKitSTP | main.py:36 | Complete
-2026-05-23 16:25:03,341 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-23 16:25:09,669 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-23 16:25:09,669 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-23 16:25:15,047 | INFO | SeqKitSTP | main.py:28 | Initiating genifying the blocked sequence
-2026-05-23 16:25:15,047 | INFO | SeqKitSTP | main.py:32 | Writing to output file: genbank_sequence.txt
-2026-05-23 16:25:15,047 | INFO | SeqKitSTP | main.py:36 | Complete
-2026-05-23 16:27:45,940 | INFO | SeqKitSTP | main.py:11 | Initiating blockifying the sequence
-2026-05-23 16:28:02,419 | INFO | SeqKitSTP | main.py:21 | Writing to output file: blocked_sequence.txt
-2026-05-23 16:28:02,419 | INFO | SeqKitSTP | genify_sequence.py:7 | Formatting GenBank output
-2026-05-24 19:07:34,307 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-24 19:07:37,259 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-24 19:07:37,260 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-24 19:07:37,260 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-24 19:07:37,653 | INFO | SeqKitSTP | Writing to output file: genbank_sequence.txt
-2026-05-24 19:07:37,653 | INFO | SeqKitSTP | Complete
-2026-05-25 11:39:19,328 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-25 11:39:35,288 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-25 11:39:35,289 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-25 11:39:35,289 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-25 11:56:51,381 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-25 11:57:04,608 | ERROR | SeqKitSTP | Invalid block size, block size must not exceed the length of the DNA sequence
-2026-05-25 11:57:04,608 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-25 11:57:04,609 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-25 11:57:04,609 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-25 11:57:43,971 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-25 11:57:52,225 | ERROR | SeqKitSTP | Invalid block size, block size must not exceed the length of the DNA sequence
-2026-05-25 11:57:52,225 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-25 11:57:52,225 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-25 11:57:52,225 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-25 12:10:18,099 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-25 12:10:26,267 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-25 12:10:26,268 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-25 12:10:26,268 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-25 12:19:13,782 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-25 12:20:10,721 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-25 12:34:48,904 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-25 12:34:54,478 | ERROR | SeqKitSTP | Invalid block size, block size must not exceed the length of the DNA sequence
-2026-05-25 12:35:18,150 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-25 12:35:27,443 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-27 13:06:22,513 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-27 13:06:30,352 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-27 13:06:30,353 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-27 13:06:30,353 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-27 13:06:33,836 | INFO | SeqKitSTP | Writing to output file: genbank_sequence.txt
-2026-05-27 13:06:33,836 | INFO | SeqKitSTP | Complete
-2026-05-27 13:23:21,982 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-27 13:25:10,001 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-27 13:25:16,888 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-27 13:25:16,888 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-27 13:25:16,888 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-27 13:25:22,969 | INFO | SeqKitSTP | Writing to output file: genbank_sequence.txt
-2026-05-27 13:25:22,970 | INFO | SeqKitSTP | Complete
-2026-05-27 13:25:54,524 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-27 13:26:00,236 | ERROR | SeqKitSTP | Invalid base entered in the dna sequence
-2026-05-27 13:53:37,310 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-27 13:53:41,608 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-27 13:53:41,609 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-27 13:53:41,609 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-27 13:56:06,765 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-27 13:56:09,100 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-27 13:56:09,101 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-27 13:56:09,101 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-27 14:05:31,910 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-27 14:05:34,339 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-27 14:05:34,340 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-27 14:05:34,340 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-27 14:07:12,675 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-27 14:07:14,845 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-27 14:07:14,845 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-27 14:07:14,845 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-27 14:07:16,112 | ERROR | SeqKitSTP | Block size must not be zero
-2026-05-27 14:17:37,992 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-27 14:17:42,200 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-27 14:17:42,200 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-27 14:17:42,201 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-27 14:17:44,880 | INFO | SeqKitSTP | Writing to output file: genbank_sequence.txt
-2026-05-27 14:17:44,880 | INFO | SeqKitSTP | Complete
-2026-05-27 14:18:28,802 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-27 14:18:35,319 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-27 14:18:35,320 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-27 14:18:35,320 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-27 14:18:40,148 | ERROR | SeqKitSTP | Block size must not be zero or negative
-2026-05-27 14:20:39,035 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-27 14:20:42,150 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-27 14:20:42,151 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-27 14:20:42,151 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-27 14:20:52,612 | INFO | SeqKitSTP | Writing to output file: genbank_sequence.txt
-2026-05-27 14:20:52,613 | INFO | SeqKitSTP | Complete
-2026-05-27 14:48:45,475 | INFO | SeqKitSTP | Initiating blockifying the sequence
-2026-05-27 14:48:53,746 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
-2026-05-27 14:48:53,747 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
-2026-05-27 14:48:53,747 | INFO | SeqKitSTP | Formatting GenBank output
-2026-05-27 14:48:55,483 | ERROR | SeqKitSTP | Block size must be numerical
+2026-06-04 05:10:55,589 | ERROR | SeqKitSTP | CDS sequence is not divisible by 3
+2026-06-04 05:12:28,839 | ERROR | SeqKitSTP | CDS sequence is not divisible by 3
+2026-06-04 05:12:52,511 | ERROR | SeqKitSTP | CDS sequence is not divisible by 3
+2026-06-04 05:12:58,955 | ERROR | SeqKitSTP | CDS sequence is not divisible by 3
+2026-06-04 05:13:07,194 | ERROR | SeqKitSTP | CDS sequence is not divisible by 3
+2026-06-04 05:20:17,274 | ERROR | SeqKitSTP | Invalid codon encountered: gag
+2026-06-04 05:24:31,105 | ERROR | SeqKitSTP | Invalid codon encountered: gac
+2026-06-04 05:26:27,545 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-06-04 05:26:27,545 | INFO | SeqKitSTP | Translation complete
+2026-06-04 05:33:36,574 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-06-04 05:33:36,574 | INFO | SeqKitSTP | Translation complete
+2026-06-04 05:46:56,891 | INFO | SeqKitSTP | Initiating blockifying the sequence
+2026-06-04 05:47:01,988 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
+2026-06-04 05:47:01,988 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
+2026-06-04 05:47:01,988 | INFO | SeqKitSTP | Formatting GenBank output
+2026-06-04 05:47:06,300 | INFO | SeqKitSTP | Writing to output file: genbank_sequence.txt
+2026-06-04 05:47:06,300 | INFO | SeqKitSTP | Complete
+2026-06-04 05:48:52,365 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-06-04 05:48:52,365 | INFO | SeqKitSTP | Transcription complete
+2026-06-04 05:49:06,858 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-06-04 05:49:06,858 | INFO | SeqKitSTP | Translation complete
+2026-06-04 05:49:09,489 | INFO | SeqKitSTP | Exiting SeqKitSTP
