@@ -27,6 +27,7 @@ codon_table = {
     "uaa": "*", "uag": "*", "uga": "*"
 }
 
+stop_codons = {"uaa", "uga", "uag"}
 
 def translate(rna_sequence: str, CDS_start: str, CDS_end: str) -> str:
 
@@ -43,7 +44,7 @@ def translate(rna_sequence: str, CDS_start: str, CDS_end: str) -> str:
             raise ValueError("RNA sequence contains invalid characters. Only a, c, g, u are allowed.")
 
     CDS_start = CDS_start.lower() if CDS_start else "aug"
-    CDS_end = CDS_end.lower() if CDS_end else "uga"
+    CDS_end = CDS_end.lower() if CDS_end else None
 
     start_index = rna_sequence.find(CDS_start)
     if start_index == -1:
@@ -52,13 +53,19 @@ def translate(rna_sequence: str, CDS_start: str, CDS_end: str) -> str:
 
     stop_index = None
     for i in range(start_index + 3, len(rna_sequence) - 2, 3):
-        if rna_sequence[i:i + 3] == CDS_end:
-            stop_index = i
-            break
-
-    if stop_index == None:
-        logger.error("Stop codon not found after start")
-        raise ValueError(f"Stop codon not found after start codon")
+        codon = rna_sequence[i:i + 3]
+        if CDS_end:
+            if codon == CDS_end:
+                stop_index = i
+                break
+        else:
+            if codon in stop_codons:
+                stop_index = i
+                break        
+    
+    if stop_index is None:
+        logger.error("Stop codon not found after start or invalid stop codon entered")
+        raise ValueError("Stop codon not found after start or invalid stop codon entered")
 
     CDS_rna_sequence = rna_sequence[start_index: stop_index + len(CDS_end)]
 

@@ -62,13 +62,13 @@ def main():
                 """
                 Translate an RNA sequence to amino acids based on user input.
                 """
-                rna_sequence = input("Enter the RNA sequence: ").lower()
-                CDS_start = input("Enter the start codon (default is AUG): ")
+                rna_sequence = input("Enter the RNA sequence: ").lower().replace(" ", "").replace("\n", "" )
+                CDS_start = input("Enter the start codon (default is aug): ")
                 if CDS_start == "":
-                    CDS_start = "AUG"
-                CDS_end = input("Enter the stop codon (default is UGA): ")
+                    CDS_start = "aug"
+                CDS_end = input("Enter the stop codon (default is uga): ")
                 if CDS_end == "":
-                    CDS_end = "UGA"
+                    CDS_end = "uga"
                 translate(rna_sequence, CDS_start, CDS_end)
 
             elif user_choice == "4":

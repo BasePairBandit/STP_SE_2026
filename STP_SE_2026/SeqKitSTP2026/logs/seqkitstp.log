@@ -20,3 +20,71 @@
 2026-06-04 05:49:06,858 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
 2026-06-04 05:49:06,858 | INFO | SeqKitSTP | Translation complete
 2026-06-04 05:49:09,489 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-06-06 05:07:53,016 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-06-06 05:07:53,016 | INFO | SeqKitSTP | Transcription complete
+2026-06-06 05:08:10,268 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-06-06 05:08:26,825 | ERROR | SeqKitSTP | Stop codon not found after start
+2026-06-06 05:08:26,827 | ERROR | SeqKitSTP | An error occurred: Stop codon not found after start codon
+2026-06-06 05:08:46,471 | ERROR | SeqKitSTP | Stop codon not found after start
+2026-06-06 05:08:46,472 | ERROR | SeqKitSTP | An error occurred: Stop codon not found after start codon
+2026-06-06 05:09:28,731 | ERROR | SeqKitSTP | Stop codon not found after start
+2026-06-06 05:09:28,731 | ERROR | SeqKitSTP | An error occurred: Stop codon not found after start codon
+2026-06-06 05:11:09,279 | ERROR | SeqKitSTP | RNA input contains invalid characters
+2026-06-06 05:11:09,295 | ERROR | SeqKitSTP | An error occurred: RNA sequence contains invalid characters. Only a, c, g, u are allowed.
+2026-06-06 05:12:37,625 | ERROR | SeqKitSTP | RNA input contains invalid characters
+2026-06-06 05:12:37,625 | ERROR | SeqKitSTP | An error occurred: RNA sequence contains invalid characters. Only a, c, g, u are allowed.
+2026-06-06 05:13:38,488 | ERROR | SeqKitSTP | Stop codon not found after start
+2026-06-06 05:13:38,488 | ERROR | SeqKitSTP | An error occurred: Stop codon not found after start codon
+2026-06-07 22:53:57,100 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-06-07 22:53:57,108 | INFO | SeqKitSTP | Transcription complete
+2026-06-07 23:03:44,761 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-06-07 23:20:40,355 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-06-07 23:20:40,356 | INFO | SeqKitSTP | Transcription complete
+2026-06-07 23:20:56,429 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-06-07 23:21:14,621 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-06-07 23:21:14,621 | INFO | SeqKitSTP | Transcription complete
+2026-06-07 23:21:28,575 | ERROR | SeqKitSTP | User input is empty
+2026-06-07 23:21:28,586 | ERROR | SeqKitSTP | An error occurred: You have not entered anything
+2026-06-07 23:25:29,007 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-07 23:25:29,008 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [a] [c] [t] [g]
+2026-06-07 23:27:00,255 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-07 23:27:00,255 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [a] [c] [t] [g]
+2026-06-07 23:34:32,874 | ERROR | SeqKitSTP | User input is empty
+2026-06-07 23:34:32,874 | ERROR | SeqKitSTP | An error occurred: You have not entered anything
+2026-06-07 23:38:20,425 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-07 23:38:20,425 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [a] [c] [t] [g]
+2026-06-07 23:40:46,959 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-07 23:40:46,959 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [a] [c] [t] [g]
+2026-06-07 23:41:38,849 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-07 23:41:38,850 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [a] [c] [t] [g]
+2026-06-07 23:43:06,781 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-07 23:43:06,781 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [a] [c] [t] [g]
+2026-06-07 23:45:26,025 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-07 23:45:26,025 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [a] [c] [t] [g]
+2026-06-07 23:45:33,643 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-06-07 23:45:33,645 | INFO | SeqKitSTP | Transcription complete
+2026-06-07 23:47:54,108 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-06-07 23:47:57,708 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-07 23:47:57,708 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [a] [c] [t] [g]
+2026-06-07 23:48:18,974 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-07 23:48:18,974 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [a] [c] [t] [g]
+2026-06-07 23:48:50,734 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-07 23:48:50,736 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [a] [c] [t] [g]
+2026-06-07 23:50:33,233 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-06-07 23:50:33,235 | INFO | SeqKitSTP | Transcription complete
+2026-06-07 23:50:35,910 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-06-07 23:59:48,276 | ERROR | SeqKitSTP | Start codon not found
+2026-06-07 23:59:48,287 | ERROR | SeqKitSTP | An error occurred: Start codon not found
+2026-06-08 00:00:03,583 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-06-08 00:00:03,585 | INFO | SeqKitSTP | Translation complete
+2026-06-08 00:00:32,062 | ERROR | SeqKitSTP | Stop codon not found after start
+2026-06-08 00:00:32,062 | ERROR | SeqKitSTP | An error occurred: Stop codon not found after start codon
+2026-06-08 00:02:38,608 | ERROR | SeqKitSTP | Stop codon not found after start
+2026-06-08 00:02:38,608 | ERROR | SeqKitSTP | An error occurred: Stop codon not found after start codon
+2026-06-08 00:10:03,739 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-06-08 00:10:03,739 | INFO | SeqKitSTP | Translation complete
+2026-06-08 00:12:48,358 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-06-08 00:29:40,426 | ERROR | SeqKitSTP | Invalid stop codon entered
+2026-06-08 00:29:40,426 | ERROR | SeqKitSTP | An error occurred: Start codon not found
+2026-06-08 00:33:10,442 | ERROR | SeqKitSTP | Invalid stop codon entered
+2026-06-08 00:33:10,442 | ERROR | SeqKitSTP | An error occurred: Start codon not found
