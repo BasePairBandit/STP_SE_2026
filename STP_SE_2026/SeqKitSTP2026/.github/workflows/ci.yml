@@ -27,5 +27,5 @@ jobs:
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v5
         with:
-          token: ${{ secrets.f1d2252b-0351-4d4d-a7aa-87af6532e0e4 }}
+          token: ${{ secrets.CODECOV_TOKEN }}
           files: ./coverage.xml
