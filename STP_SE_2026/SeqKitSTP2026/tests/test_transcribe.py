@@ -25,3 +25,10 @@ def test_transcribe_space_case():
     dna_sequence = "AC GT"
     expected_RNA_sequence = "acgu"
     assert transcribe(dna_sequence)==expected_RNA_sequence
+
+def test_transcribe_only_space_case(caplog):
+    dna_sequence = " "
+    caplog.set_level(logging.ERROR)
+    with pytest.raises(ValueError):
+        transcribe(dna_sequence)
+    assert "User input is empty" in caplog.text

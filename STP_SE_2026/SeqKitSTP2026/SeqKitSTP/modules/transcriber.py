@@ -5,11 +5,12 @@ valid_bases = ["A","T","C","G"]
 
 
 def transcribe(dna_sequence: str) -> str:
+
+    cleaned_rna_sequence = dna_sequence.replace(" ","")
     
-    if len(dna_sequence) <= 0:
+    if len(cleaned_rna_sequence) <= 0:
         logger.error("User input is empty")
         raise ValueError("You have not entered anything")
-    cleaned_rna_sequence = dna_sequence.replace(" ","")
 
     if any(base not in valid_bases for base in cleaned_rna_sequence):
         logger.error("DNA input contains invalid characters")

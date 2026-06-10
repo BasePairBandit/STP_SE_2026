@@ -43,31 +43,46 @@ def translate(rna_sequence: str, CDS_start: str, CDS_end: str) -> str:
             logger.error("RNA input contains invalid characters")
             raise ValueError("RNA sequence contains invalid characters. Only a, c, g, u are allowed.")
 
-    CDS_start = CDS_start.lower() if CDS_start else "aug"
-    CDS_end = CDS_end.lower() if CDS_end else None
+    CDS_start = CDS_start.strip().lower() if CDS_start else "aug"
+    CDS_end = CDS_end.strip().lower() if CDS_end else None
+
+    if len(CDS_start)!= 3:
+        logger.error("Start codon is not three nucleotides long")
+        raise ValueError("Start codon is not valid")
 
     start_index = rna_sequence.find(CDS_start)
     if start_index == -1:
         logger.error("Start codon not found")
-        raise ValueError(f"Start codon not found")
+        raise ValueError(f"Start codon {CDS_start} not found")
+
+    if CDS_end is not None and CDS_end not in stop_codons:
+        logger.error("Invalid stop codon entered")
+        raise ValueError("Stop codon is not valid")
 
     stop_index = None
+    found_stop_index = None
     for i in range(start_index + 3, len(rna_sequence) - 2, 3):
         codon = rna_sequence[i:i + 3]
-        if CDS_end:
+
+        if CDS_end is not None:
+            if len(CDS_end) != 3:
+                logging.error("Stop codon is not three nucleotides long")
+                raise ValueError("Stop codon must contain exactly three nucleotides")
             if codon == CDS_end:
                 stop_index = i
+                found_stop_index = codon
                 break
         else:
             if codon in stop_codons:
                 stop_index = i
+                found_stop_index = i
                 break        
     
     if stop_index is None:
         logger.error("Stop codon not found after start or invalid stop codon entered")
         raise ValueError("Stop codon not found after start or invalid stop codon entered")
 
-    CDS_rna_sequence = rna_sequence[start_index: stop_index + len(CDS_end)]
+    CDS_rna_sequence = rna_sequence[start_index: stop_index + 3]
 
     if len(CDS_rna_sequence) % 3 != 0:
         logger.error("CDS sequence is not divisible by 3")
