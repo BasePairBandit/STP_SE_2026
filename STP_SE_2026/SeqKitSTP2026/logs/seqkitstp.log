@@ -219,3 +219,20 @@
 2026-06-10 21:45:55,527 | ERROR | SeqKitSTP | An error occurred: RNA sequence contains uppercase characters. Please check the sequence and enter in lowercase.
 2026-06-10 21:47:06,927 | ERROR | SeqKitSTP | RNA input is empty
 2026-06-10 21:47:06,927 | ERROR | SeqKitSTP | An error occurred: RNE sequence is empty
+2026-06-18 12:28:49,214 | INFO | SeqKitSTP | Initiating blockifying the sequence
+2026-06-18 12:28:57,516 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
+2026-06-18 12:28:57,517 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
+2026-06-18 12:28:57,517 | INFO | SeqKitSTP | Formatting GenBank output
+2026-06-18 12:29:01,029 | INFO | SeqKitSTP | Writing to output file: genbank_sequence.txt
+2026-06-18 12:29:01,030 | INFO | SeqKitSTP | Complete
+2026-06-18 12:29:21,544 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-18 12:29:21,545 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [A] [C] [T] [G]
+2026-06-19 09:33:46,307 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-19 09:33:46,307 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [A] [C] [T] [G]
+2026-06-19 09:34:09,907 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-19 09:34:09,907 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [A] [C] [T] [G]
+2026-06-19 09:34:21,315 | ERROR | SeqKitSTP | DNA input contains invalid characters
+2026-06-19 09:34:21,315 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [A] [C] [T] [G]
+2026-06-19 09:34:28,137 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-06-19 09:34:28,137 | INFO | SeqKitSTP | Transcription complete
+2026-06-19 09:38:30,720 | INFO | SeqKitSTP | Exiting SeqKitSTP
