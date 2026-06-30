@@ -197,7 +197,7 @@ class SequenceAPI:
         Because default is current version and I have nto found a work around to deal with specific versions, I will add a disclaimer if the version the user
         enters is not a match with the latest. It seems like I would need to know the exact release for a particular version which seems a bit complex.
         """
-        self._validate_ensembl_transcript(user_transcript_id)
+        self._validate_ensembl_transcript(full_user_transcript_id)
 
         meta_response = self._get(
             self._ensembl_url,
@@ -230,7 +230,7 @@ class SequenceAPI:
 
         GRCh37 doesn't support mane select?
         """
-        self._validate_ensembl_transcript(user_transcript_id)
+        self._validate_ensembl_transcript(full_user_transcript_id)
 
         meta_response = self._get(
             self._ensembl_37_url,
