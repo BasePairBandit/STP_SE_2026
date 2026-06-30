@@ -352,15 +352,14 @@ if __name__ == "__main__":
                 record = api.fetch_ensembl_38_transcript(user_transcript_id)
                 latest_version = record["metadata"]["version"]
                 latest_full_id = f"{record['metadata']['id']}.{latest_version}"
-<<<<<<< HEAD
-                if int(user_transcript_version) != int(latest_version):
-                        print(f"Ensembl REST API returns the current version for this stable ID which is {latest_full_id}. To retrieve an specific version, you would need the relevant "
-=======
 
-                if int(user_transcript_version) != int(record["metadata"]["version"]):
-                        print(f"The Ensembl REST API returns the current version for this stable ID which is {latest_full_id}. To retrieve an specific version, you would need the relevant "
->>>>>>> 623824e (no major changes)
-                                f"Ensembl archive release.")
+                if int(user_transcript_version) != int(latest_version):
+                    print(
+                        f"The Ensembl REST API returns the current version for this stable ID "
+                        f"which is {latest_full_id}. To retrieve a specific version, you would "
+                        f"need the relevant Ensembl archive release."
+    )
+
 
                 structured_record = api.structure_ensembl_transcript(record)
 
@@ -373,18 +372,15 @@ if __name__ == "__main__":
                 record = api.fetch_ensembl_37_transcript(user_transcript_id)
                 latest_version = record["metadata"]["version"]
                 latest_full_id = f"{record['metadata']['id']}.{latest_version}"
-<<<<<<< HEAD
+
                 if int(user_transcript_version) != int(latest_version):
-                        print(f"Ensembl REST API returns the current version for this stable ID which is {latest_full_id}. To retrieve an specific version, you would need the relevant "
-                                f"Ensembl archive release.")
+                    print(
+                        f"The Ensembl REST API returns the current version for this stable ID "
+                        f"which is {latest_full_id}. To retrieve a specific version, you would "
+                        f"need the relevant Ensembl archive release."
+                    )
 
 
-=======
-                if int(user_transcript_version) != int(record["metadata"]["version"]):
-                        print(f"The Ensembl REST API returns the current version for this stable ID which is {latest_full_id}. To retrieve a specific version, you would need the relevant "
-                                f"Ensembl archive release.")
-                        
->>>>>>> 623824e (no major changes)
                 structured_record = api.structure_ensembl_transcript(record)
 
                 print(f"Transcript_ID : {structured_record['id']}")
