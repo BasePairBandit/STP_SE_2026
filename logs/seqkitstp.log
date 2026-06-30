@@ -200,3 +200,9 @@
 2026-05-27 14:48:53,747 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
 2026-05-27 14:48:53,747 | INFO | SeqKitSTP | Formatting GenBank output
 2026-05-27 14:48:55,483 | ERROR | SeqKitSTP | Block size must be numerical
+2026-06-30 09:12:06,445 | INFO | SeqKitSTP | Initiating blockifying the sequence
+2026-06-30 09:12:13,813 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
+2026-06-30 09:12:13,814 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
+2026-06-30 09:12:13,814 | INFO | SeqKitSTP | Formatting GenBank output
+2026-06-30 09:12:17,582 | INFO | SeqKitSTP | Writing to output file: genbank_sequence.txt
+2026-06-30 09:12:17,582 | INFO | SeqKitSTP | Complete
