@@ -11,23 +11,6 @@ class TranscriptIdError(Exception):
     """
     pass
 
-# ------------------------------------------------------------------
-# Python classes and objects
-#
-# A class is a blueprint for creating objects. An object groups together
-# related data (attributes) and functions (methods) into a single unit.
-#
-# In this example we create a SequenceAPI object because all of the
-# functionality relates to interacting with biological sequence
-# databases. The object stores information shared by every request,
-# such as the HTTP session, timeout value and API URLs, while its
-# methods perform specific tasks such as retrieving transcripts from
-# GenBank or Ensembl.
-#
-# Organising the code this way keeps related functionality together,
-# reduces duplication and makes it easy to add support for additional
-# APIs in the future.
-# ------------------------------------------------------------------
 class SequenceAPI:
     """
     Interface to external sequence databases.
@@ -35,7 +18,7 @@ class SequenceAPI:
     Current support
     ---------------
     - GenBank / RefSeq
-    - Ensembl (planned)
+    - Ensembl 
     - HGNC (planned)
     - UniProt (planned)
     - ClinVar (planned)
@@ -45,36 +28,8 @@ class SequenceAPI:
         """
         Initialise the API interface.
         """
-
-        # Session configuration
         self.timeout = timeout
-
-        # Create a persistent HTTP session.
-        # Unlike requests.get(), a Session reuses TCP connections across multiple
-        # requests (connection pooling), making repeated API calls more efficient.
-        # It also provides a central place to configure headers, authentication,
-        # cookies and retry behaviour if required in the future.
         self.session = requests.Session()
-
-        # API endpoints.
-        #
-        # These URLs identify the web services used by SeqToolkit to retrieve
-        # biological data.
-        #
-        # The leading underscore (_) is a Python naming convention indicating
-        # that these attributes are intended for internal use within the class.
-        # Unlike some programming languages, Python does not enforce private
-        # variables. Instead, it relies on naming conventions:
-        #
-        #     public_attribute      Intended for anyone to use.
-        #     _internal_attribute   Intended for use inside the class only
-        #                           (a convention, not enforced).
-        #     __private_attribute   Name-mangled by Python to make accidental
-        #                           access more difficult.
-        #
-        # The public methods of this class (e.g. fetch_genbank_transcript())
-        # use these endpoint URLs internally when communicating with each
-        # external database.
 
         self._genbank_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
         self._ensembl_url = "https://rest.ensembl.org"
@@ -110,27 +65,6 @@ class SequenceAPI:
             logger.exception(f"Failed GET request: {url}")
             raise
 
-    # ------------------------------------------------------------------
-    # Validation
-    # ------------------------------------------------------------------
-
-    # ------------------------------------------------------------------
-    # @staticmethod tells Python that this method does not need access
-    # to the object itself (self).
-    #
-    # Normally, methods inside a class receive the current object as their
-    # first argument:
-    #
-    #     def my_method(self):
-    #
-    # However, this validation function only examines the transcript ID
-    # passed to it. It doesn't read or modify any attributes of the
-    # SequenceAPI object.
-    #
-    # Using @staticmethod tells Python that this function behaves like a
-    # regular function, but we keep it inside the class because it is
-    # closely related to the SequenceAPI.
-    # ------------------------------------------------------------------
     @staticmethod
     def _validate_refseq_transcript(transcript_id):
         """
@@ -288,6 +222,28 @@ class SequenceAPI:
         """
 
         raise NotImplementedError()
+
+    # ------------------------------------------------------------------
+    # Extract MANE select
+    # ------------------------------------------------------------------
+
+    def extract_mane(self, record):
+        metadata = record["metadata"]
+        gene_id = metadata["Parent"]
+
+        tx_response = self._get(
+            self._ensembl_url,
+            f"overlap/id/{gene_id}?feature=transcript",
+            params={"content-type": "application/json","expand": 1,},
+            headers={}
+        )
+        transcripts = tx_response.json()
+        
+        for tx in transcripts:
+            if "tag" in tx and "MANE_Select" in tx["tag"]:
+                return tx["id"]
+        return None
+
     # ------------------------------------------------------------------
     # Structure Ensembl API data into a dictionary
     # ------------------------------------------------------------------
@@ -308,9 +264,10 @@ class SequenceAPI:
             "cds_start":translation_start,
             "cds_end" : translation_end,
         }
+    
 
 if __name__ == "__main__":
-    
+    #Perhaps better to place this block in main.py? Need to also find a way no not over expand the menu. Maybe look into dispatch table.
     print("""
     Welcome to SeqKitSTP!
     Select an option to proceed:
@@ -319,6 +276,9 @@ if __name__ == "__main__":
     3. Ensembl (GRCh37)
     4. Exit
           """)
+    
+    # Examples to test code : ENST00000367770.8 (TP53 MANE Select), ENST00000420246.5 (TP53 alternative)
+
     try:
         while True:
             api = SequenceAPI()
@@ -331,7 +291,7 @@ if __name__ == "__main__":
             if len(split_user_transcript_id) != 2:
                 raise TranscriptIdError(
 
-                "Please enter a transcript ID with a version, eg. ENST00000288602.6"                )
+                "Please enter a transcript ID with a version, eg. ENST00000252486.9"                )
             user_transcript_id = split_user_transcript_id[0]
             user_transcript_version = split_user_transcript_id[1]
 
@@ -359,12 +319,15 @@ if __name__ == "__main__":
                         f"which is {latest_full_id}. To retrieve a specific version, you would "
                         f"need the relevant Ensembl archive release."
     )
-
-
                 structured_record = api.structure_ensembl_transcript(record)
 
                 print(f"Transcript_ID : {structured_record['id']}")
                 print(f"Transcript_name : {structured_record['name']}")
+                mane = api.extract_mane(record)
+                if mane:
+                    print(f"MANE Select transcript : {mane}")
+                else:
+                    print("No MANE select found")
                 print(f"Sequence : {structured_record['sequence']}")
                 print(f"CDS start : {structured_record['cds_start']}")
                 print(f"CDS end : {structured_record['cds_end']}")
@@ -380,11 +343,15 @@ if __name__ == "__main__":
                         f"need the relevant Ensembl archive release."
                     )
 
-
                 structured_record = api.structure_ensembl_transcript(record)
 
                 print(f"Transcript_ID : {structured_record['id']}")
                 print(f"Transcript_name : {structured_record['name']}")
+                mane = api.extract_mane(record)
+                if mane:
+                    print(f"MANE Select transcript : {mane}")
+                else:
+                    print("No MANE select found")
                 print(f"Sequence : {structured_record['sequence']}")
                 print(f"CDS start : {structured_record['cds_start']}")
                 print(f"CDS end : {structured_record['cds_end']}")
