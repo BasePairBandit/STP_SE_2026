@@ -194,7 +194,8 @@ class SequenceAPI:
         """
         Fetch Ensembl transcript information.
 
-        Because default is current version, and add an exception to say if the version they entered is not the latest version.
+        Because default is current version and I have nto found a work around to deal with specific versions, I will add a disclaimer if the version the user
+        enters is not a match with the latest. It seems like I would need to know the exact release for a particular version which seems a bit complex.
         """
         self._validate_ensembl_transcript(full_user_transcript_id)
 
@@ -216,9 +217,7 @@ class SequenceAPI:
             "sequence": sequence_response.json(),
         }
 
-
-        raise NotImplementedError()
-        # ------------------------------------------------------------------
+    # ------------------------------------------------------------------
     # Ensembl - GRCh37
     # ------------------------------------------------------------------
 
@@ -226,7 +225,10 @@ class SequenceAPI:
         """
         Fetch Ensembl transcript information for GRCh37
         
-        Because default is current version, and add an exception to say if the version they entered is not the latest version.
+        Because default is current version and I have nto found a work around to deal with specific versions, I will add a disclaimer if the version the user
+        enters is not a match with the latest. It seems like I would need to know the exact release for a particular version which seems a bit complex.
+
+        GRCh37 doesn't support mane select?
         """
         self._validate_ensembl_transcript(full_user_transcript_id)
 
@@ -247,9 +249,6 @@ class SequenceAPI:
             "metadata":meta_response.json(),
             "sequence": sequence_response.json(),
         }
-
-
-        raise NotImplementedError()
 
     # ------------------------------------------------------------------
     # HGNC
@@ -351,10 +350,11 @@ if __name__ == "__main__":
 
             elif user_choice == "2":
                 record = api.fetch_ensembl_38_transcript(user_transcript_id)
-                if int(user_transcript_version) != int(record["metadata"]["version"]):
-                        print(f"The current Ensembl REST API returns the current version for this "
-                                "stable ID. To retrieve an older version, you would need the relevant "
-                                "Ensembl archive release.")
+                latest_version = record["metadata"]["version"]
+                latest_full_id = f"{record['metadata']['id']}.{latest_version}"
+                if int(user_transcript_version) != int(latest_version):
+                        print(f"Ensembl REST API returns the current version for this stable ID which is {latest_full_id}. To retrieve an specific version, you would need the relevant "
+                                f"Ensembl archive release.")
 
                 structured_record = api.structure_ensembl_transcript(record)
 
@@ -364,7 +364,14 @@ if __name__ == "__main__":
                 print(f"CDS start : {structured_record['cds_start']}")
                 print(f"CDS end : {structured_record['cds_end']}")
             elif user_choice == "3":
-                record = api.fetch_ensembl_37_transcript(full_user_transcript_id)
+                record = api.fetch_ensembl_37_transcript(user_transcript_id)
+                latest_version = record["metadata"]["version"]
+                latest_full_id = f"{record['metadata']['id']}.{latest_version}"
+                if int(user_transcript_version) != int(latest_version):
+                        print(f"Ensembl REST API returns the current version for this stable ID which is {latest_full_id}. To retrieve an specific version, you would need the relevant "
+                                f"Ensembl archive release.")
+
+
                 structured_record = api.structure_ensembl_transcript(record)
 
                 print(f"Transcript_ID : {structured_record['id']}")
