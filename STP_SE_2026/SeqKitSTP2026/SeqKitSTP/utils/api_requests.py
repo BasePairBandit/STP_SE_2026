@@ -197,18 +197,18 @@ class SequenceAPI:
         Because default is current version and I have nto found a work around to deal with specific versions, I will add a disclaimer if the version the user
         enters is not a match with the latest. It seems like I would need to know the exact release for a particular version which seems a bit complex.
         """
-        self._validate_ensembl_transcript(full_user_transcript_id)
+        self._validate_ensembl_transcript(user_transcript_id)
 
         meta_response = self._get(
             self._ensembl_url,
-            f"lookup/id/{full_user_transcript_id}",
+            f"lookup/id/{user_transcript_id}",
             params={"content-type": "application/json","expand": 1,},
             headers={}
         )        
 
         sequence_response = self._get(
             self._ensembl_url,
-            f"sequence/id/{full_user_transcript_id}",
+            f"sequence/id/{user_transcript_id}",
             headers={"content-type":"application/json"}
         )
 
@@ -221,7 +221,7 @@ class SequenceAPI:
     # Ensembl - GRCh37
     # ------------------------------------------------------------------
 
-    def fetch_ensembl_37_transcript(self, full_user_transcript_id):
+    def fetch_ensembl_37_transcript(self, user_transcript_id):
         """
         Fetch Ensembl transcript information for GRCh37
         
@@ -230,18 +230,18 @@ class SequenceAPI:
 
         GRCh37 doesn't support mane select?
         """
-        self._validate_ensembl_transcript(full_user_transcript_id)
+        self._validate_ensembl_transcript(user_transcript_id)
 
         meta_response = self._get(
             self._ensembl_37_url,
-            f"lookup/id/{full_user_transcript_id}",
+            f"lookup/id/{user_transcript_id}",
             params={"content-type": "application/json","expand": 1,},
             headers={}
         )        
 
         sequence_response = self._get(
             self._ensembl_37_url,
-            f"sequence/id/{full_user_transcript_id}",
+            f"sequence/id/{user_transcript_id}",
             headers={"content-type":"application/json"}
         )
 
@@ -334,7 +334,7 @@ if __name__ == "__main__":
                 "Please enter a transcript ID with a version, eg. ENST00000288602.6"                )
             user_transcript_id = split_user_transcript_id[0]
             user_transcript_version = split_user_transcript_id[1]
-            print(full_user_transcript_id)
+
             if user_choice == "1":
                 record = api.fetch_genbank_transcript(str(full_user_transcript_id))
                 print(f"Accession: {record["GBSeq_accession-version"]}")
@@ -352,8 +352,14 @@ if __name__ == "__main__":
                 record = api.fetch_ensembl_38_transcript(user_transcript_id)
                 latest_version = record["metadata"]["version"]
                 latest_full_id = f"{record['metadata']['id']}.{latest_version}"
+<<<<<<< HEAD
                 if int(user_transcript_version) != int(latest_version):
                         print(f"Ensembl REST API returns the current version for this stable ID which is {latest_full_id}. To retrieve an specific version, you would need the relevant "
+=======
+
+                if int(user_transcript_version) != int(record["metadata"]["version"]):
+                        print(f"The Ensembl REST API returns the current version for this stable ID which is {latest_full_id}. To retrieve an specific version, you would need the relevant "
+>>>>>>> 623824e (no major changes)
                                 f"Ensembl archive release.")
 
                 structured_record = api.structure_ensembl_transcript(record)
@@ -367,11 +373,18 @@ if __name__ == "__main__":
                 record = api.fetch_ensembl_37_transcript(user_transcript_id)
                 latest_version = record["metadata"]["version"]
                 latest_full_id = f"{record['metadata']['id']}.{latest_version}"
+<<<<<<< HEAD
                 if int(user_transcript_version) != int(latest_version):
                         print(f"Ensembl REST API returns the current version for this stable ID which is {latest_full_id}. To retrieve an specific version, you would need the relevant "
                                 f"Ensembl archive release.")
 
 
+=======
+                if int(user_transcript_version) != int(record["metadata"]["version"]):
+                        print(f"The Ensembl REST API returns the current version for this stable ID which is {latest_full_id}. To retrieve a specific version, you would need the relevant "
+                                f"Ensembl archive release.")
+                        
+>>>>>>> 623824e (no major changes)
                 structured_record = api.structure_ensembl_transcript(record)
 
                 print(f"Transcript_ID : {structured_record['id']}")
