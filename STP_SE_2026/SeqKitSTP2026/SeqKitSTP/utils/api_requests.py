@@ -75,11 +75,13 @@ class SequenceAPI:
             raise TranscriptIdError(
                 f"{transcript_id} is not a supported RefSeq transcript."
             )
+        logger.exception("User input doesn't start with 'NM-' or 'NR_")
 
         if "." not in transcript_id:
             raise TranscriptIdError(
                 f"{transcript_id} must include a version number."
             )
+        logger.exception("Version number not included in user input")
 
     @staticmethod
     def _validate_ensembl_transcript(transcript_id):
@@ -124,12 +126,12 @@ class SequenceAPI:
     # Ensembl - GRCh38
     # ------------------------------------------------------------------
 
-    def fetch_ensembl_38_transcript(self, full_user_transcript_id):
+    def fetch_ensembl_38_transcript(self, user_transcript_id):
         """
         Fetch Ensembl transcript information.
 
-        Because default is current version and I have nto found a work around to deal with specific versions, I will add a disclaimer if the version the user
-        enters is not a match with the latest. It seems like I would need to know the exact release for a particular version which seems a bit complex.
+        Because default is current version and I have not found a work around to deal with specific versions, I will add a disclaimer if the version the user
+        enters is not a match with the latest. It seems like I would need to know the exact release for a particular version which seems a bit complex so leaving it out for now.
         """
         self._validate_ensembl_transcript(full_user_transcript_id)
 
@@ -159,8 +161,8 @@ class SequenceAPI:
         """
         Fetch Ensembl transcript information for GRCh37
         
-        Because default is current version and I have nto found a work around to deal with specific versions, I will add a disclaimer if the version the user
-        enters is not a match with the latest. It seems like I would need to know the exact release for a particular version which seems a bit complex.
+        Because default is current version and I have not found a work around to deal with specific versions, I will add a disclaimer if the version the user
+        enters is not a match with the latest. It seems like I would need to know the exact release for a particular version which seems a bit complex so leaving it out for now.
 
         GRCh37 doesn't support mane select?
         """
@@ -277,7 +279,7 @@ if __name__ == "__main__":
     4. Exit
           """)
     
-    # Examples to test code : ENST00000367770.8 (TP53 MANE Select), ENST00000420246.5 (TP53 alternative)
+    # Examples to test code : ENST00000367770.8 (SCYL3), ENST00000420246.5 (TP53 alternative)
 
     try:
         while True:
