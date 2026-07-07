@@ -28,7 +28,6 @@ def test_validate_ensembl_transcript_wrong_prefix(): #wrong prefix case
 
 def test_structure_ensembl_transcript(): #normal case
     api = SequenceAPI()
-
     record = {
         "metadata": {
             "id": "ENST00000367770",
@@ -42,9 +41,7 @@ def test_structure_ensembl_transcript(): #normal case
             "seq": "ATGC"
         }
     }
-
     result = api.structure_ensembl_transcript(record)
-
     assert result["id"] == "ENST00000367770"
     assert result["name"] == "SCYL3"
     assert result["sequence"] == "ATGC"
@@ -52,26 +49,20 @@ def test_structure_ensembl_transcript(): #normal case
     assert result["cds_end"] == 500
 
 
-def test_extract_mane():
+def test_extract_mane():#mocking a response because I just want to test the function and not necessarily use a live API call that could be offline.
     api = SequenceAPI()
-
     mock_response = Mock()
-
     mock_response.json.return_value = [
         {
             "id": "ENST00000367770",
             "tag": ["MANE_Select"]
         }
     ]
-
     api._get = Mock(return_value=mock_response)
-
     record = {
         "metadata": {
             "Parent": "ENSG000001"
         }
     }
-
     result = api.extract_mane(record)
-
     assert result == "ENST00000367770"

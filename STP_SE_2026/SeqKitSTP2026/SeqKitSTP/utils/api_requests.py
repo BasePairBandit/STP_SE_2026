@@ -1,3 +1,4 @@
+from numpy import full
 import requests
 import xmltodict
 import logging
@@ -72,16 +73,17 @@ class SequenceAPI:
         """
 
         if not transcript_id.startswith(("NM_", "NR_")):
+            logger.exception("User input doesn't start with 'NM-' or 'NR_")
             raise TranscriptIdError(
                 f"{transcript_id} is not a supported RefSeq transcript."
             )
-        logger.exception("User input doesn't start with 'NM-' or 'NR_")
 
         if "." not in transcript_id:
+            logger.exception("Version number not included in user input")
             raise TranscriptIdError(
                 f"{transcript_id} must include a version number."
             )
-        logger.exception("Version number not included in user input")
+
 
     @staticmethod
     def _validate_ensembl_transcript(transcript_id):
@@ -98,6 +100,17 @@ class SequenceAPI:
             #raise TranscriptIdError(
                 #f"{transcript_id} must include a version number."
             #)
+
+    @staticmethod
+    def _validate_hgnc_transcript(HGNC_ID):
+        """
+        Validate a hgnc transcript.
+        """
+
+        if not HGNC_ID.startswith(("HGNC:")):
+            raise TranscriptIdError(
+                f"{HGNC_ID} is not a supported HGNC ID."
+            )
 
     # ------------------------------------------------------------------
     # GenBank
@@ -130,10 +143,10 @@ class SequenceAPI:
         """
         Fetch Ensembl transcript information.
 
-        Because default is current version and I have not found a work around to deal with specific versions, I will add a disclaimer if the version the user
+        Because default is current version and I have not found a work around to deal with specific versions, I added a disclaimer if the version the user
         enters is not a match with the latest. It seems like I would need to know the exact release for a particular version which seems a bit complex so leaving it out for now.
         """
-        self._validate_ensembl_transcript(full_user_transcript_id)
+        self._validate_ensembl_transcript(user_transcript_id)
 
         meta_response = self._get(
             self._ensembl_url,
@@ -157,7 +170,7 @@ class SequenceAPI:
     # Ensembl - GRCh37
     # ------------------------------------------------------------------
 
-    def fetch_ensembl_37_transcript(self, user_transcript_id):
+    def fetch_ensembl_37_transcript(self, full_user_transcript_id):
         """
         Fetch Ensembl transcript information for GRCh37
         
@@ -190,14 +203,23 @@ class SequenceAPI:
     # HGNC
     # ------------------------------------------------------------------
 
-    def fetch_hgnc_gene(self, gene_symbol):
+    def fetch_hgnc_gene(self, HGNC_ID):
         """
         Fetch HGNC gene information.
 
         Placeholder.
         """
+        self._validate_hgnc_transcript(HGNC_ID)
 
-        raise NotImplementedError()
+        meta_response = self._get(
+            self._hgnc_url,
+            f"/fetch/hgnc_id/{HGNC_ID}",
+            headers={"Accept": "application/json"},
+        )    
+        return{
+            "metadata":meta_response.json(),
+        }
+
 
     # ------------------------------------------------------------------
     # UniProt
@@ -266,17 +288,39 @@ class SequenceAPI:
             "cds_start":translation_start,
             "cds_end" : translation_end,
         }
+    # ------------------------------------------------------------------
+    # Structure HGNC API data into a dictionary
+    # ------------------------------------------------------------------
+
+
+    def structure_HGNC_transcript(self,record): # This function is missing sequence and CDS info.
+        metadata = record["metadata"]
+        doc = record["metadata"]["response"]["docs"][0]
+
+        return{
+            "HGNC_id": doc["hgnc_id"],
+            "symbol": doc["symbol"],
+            "ensembl_gene_id": doc.get("ensembl_gene_id"),
+            "mane_select" : doc.get("mane_select"),
+        }
     
 
 if __name__ == "__main__":
     #Perhaps better to place this block in main.py? Need to also find a way no not over expand the menu. Maybe look into dispatch table.
-    print("""
-    Welcome to SeqKitSTP!
+    print(r"""
+        Welcome to SeqKitSTP!
+          
+    -. .-.   .-. .-.   .-. .-.   .  
+    ||\|||\ /|||\|||\ /|||\|||\ /|
+    |/ \|||\|||/ \|||\|||/ \|||\||
+    ~   `-~ `-`   `-~ `-`   `-~ `-
+
     Select an option to proceed:
     1. Genbank
     2. Ensembl (GRCh38)
     3. Ensembl (GRCh37)
-    4. Exit
+    4. HGNC
+    5. Exit
           """)
     
     # Examples to test code : ENST00000367770.8 (SCYL3), ENST00000420246.5 (TP53 alternative)
@@ -284,19 +328,26 @@ if __name__ == "__main__":
     try:
         while True:
             api = SequenceAPI()
-            user_choice = input("Enter your choice (1, 2, 3, or 4): ")
-            if user_choice == "4":
+            user_choice = input("Enter your choice (1, 2, 3, 4 or 5): ")
+            if user_choice == "5":
                 print("Exiting SeqKitSTP. Goodbye!")
                 break
+            if user_choice == "4":
+                HGNC_ID = input("Enter HGNC_ID:")
+                record = api.fetch_hgnc_gene(HGNC_ID)
+                structured_record = api.structure_HGNC_transcript(record)
+                print(f"HGNC_ID : {structured_record['HGNC_id']}")
+                print(f"Symbol : {structured_record['symbol']}")
+                print(f"ensembl_gene_id : {structured_record['ensembl_gene_id']}")
+                print(f"mane_select : {structured_record['mane_select']}")
+                continue
             full_user_transcript_id = input("Enter transcript ID (including version) :")
             split_user_transcript_id = full_user_transcript_id.split(".")
             if len(split_user_transcript_id) != 2:
-                raise TranscriptIdError(
+                raise TranscriptIdError("Please enter a transcript ID with a version, eg. ENST00000252486.9")
 
-                "Please enter a transcript ID with a version, eg. ENST00000252486.9"                )
             user_transcript_id = split_user_transcript_id[0]
             user_transcript_version = split_user_transcript_id[1]
-
             if user_choice == "1":
                 record = api.fetch_genbank_transcript(str(full_user_transcript_id))
                 print(f"Accession: {record["GBSeq_accession-version"]}")
