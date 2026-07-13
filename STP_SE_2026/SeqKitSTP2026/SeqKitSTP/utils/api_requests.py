@@ -1,3 +1,5 @@
+from pdb import main
+
 from numpy import full
 import requests
 import xmltodict
@@ -30,7 +32,7 @@ class SequenceAPI:
         Initialise the API interface.
         """
         self.timeout = timeout
-        self.session = requests.Session()
+        self.session = requests.Session() #More efficient than creating a new connection for every request.
 
         self._genbank_url = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
         self._ensembl_url = "https://rest.ensembl.org"
@@ -143,8 +145,9 @@ class SequenceAPI:
         """
         Fetch Ensembl transcript information.
 
-        Because default is current version and I have not found a work around to deal with specific versions, I added a disclaimer if the version the user
-        enters is not a match with the latest. It seems like I would need to know the exact release for a particular version which seems a bit complex so leaving it out for now.
+        Because default is current version and I have not found a work around to deal with specific versions, 
+        I added a disclaimer if the version the user enters is not a match with the latest. It seems like I 
+        would need to know the exact release for a particular version which seems a bit complex so leaving it out for now.
         """
         self._validate_ensembl_transcript(user_transcript_id)
 
@@ -170,16 +173,17 @@ class SequenceAPI:
     # Ensembl - GRCh37
     # ------------------------------------------------------------------
 
-    def fetch_ensembl_37_transcript(self, full_user_transcript_id):
+    def fetch_ensembl_37_transcript(self, user_transcript_id):
         """
         Fetch Ensembl transcript information for GRCh37
         
-        Because default is current version and I have not found a work around to deal with specific versions, I will add a disclaimer if the version the user
-        enters is not a match with the latest. It seems like I would need to know the exact release for a particular version which seems a bit complex so leaving it out for now.
+        Because default is current version and I have not found a work around to deal with specific versions, 
+        I will add a disclaimer if the version the user enters is not a match with the latest. It seems like I
+        would need to know the exact release for a particular version which seems a bit complex so leaving it out for now.
 
         GRCh37 doesn't support mane select?
         """
-        self._validate_ensembl_transcript(full_user_transcript_id)
+        self._validate_ensembl_transcript(user_transcript_id)
 
         meta_response = self._get(
             self._ensembl_37_url,
@@ -274,7 +278,6 @@ class SequenceAPI:
 
     def structure_ensembl_transcript(self,record):
         metadata = record["metadata"]
-        Sequence = record["sequence"]
 
         transcript_id = f"{metadata['id']}"
         transcript_name = metadata['display_name']
@@ -294,7 +297,7 @@ class SequenceAPI:
 
 
     def structure_HGNC_transcript(self,record): # This function is missing sequence and CDS info.
-        metadata = record["metadata"]
+
         doc = record["metadata"]["response"]["docs"][0]
 
         return{
@@ -304,114 +307,4 @@ class SequenceAPI:
             "mane_select" : doc.get("mane_select"),
         }
     
-
-if __name__ == "__main__":
-    #Perhaps better to place this block in main.py? Need to also find a way no not over expand the menu. Maybe look into dispatch table.
-    print(r"""
-        Welcome to SeqKitSTP!
-          
-    -. .-.   .-. .-.   .-. .-.   .  
-    ||\|||\ /|||\|||\ /|||\|||\ /|
-    |/ \|||\|||/ \|||\|||/ \|||\||
-    ~   `-~ `-`   `-~ `-`   `-~ `-
-
-    Select an option to proceed:
-    1. Genbank
-    2. Ensembl (GRCh38)
-    3. Ensembl (GRCh37)
-    4. HGNC
-    5. Exit
-          """)
-    
-    # Examples to test code : ENST00000367770.8 (SCYL3), ENST00000420246.5 (TP53 alternative)
-
-    try:
-        while True:
-            api = SequenceAPI()
-            user_choice = input("Enter your choice (1, 2, 3, 4 or 5): ")
-            if user_choice == "5":
-                print("Exiting SeqKitSTP. Goodbye!")
-                break
-            if user_choice == "4":
-                HGNC_ID = input("Enter HGNC_ID:")
-                record = api.fetch_hgnc_gene(HGNC_ID)
-                structured_record = api.structure_HGNC_transcript(record)
-                print(f"HGNC_ID : {structured_record['HGNC_id']}")
-                print(f"Symbol : {structured_record['symbol']}")
-                print(f"ensembl_gene_id : {structured_record['ensembl_gene_id']}")
-                print(f"mane_select : {structured_record['mane_select']}")
-                continue
-            full_user_transcript_id = input("Enter transcript ID (including version) :")
-            split_user_transcript_id = full_user_transcript_id.split(".")
-            if len(split_user_transcript_id) != 2:
-                raise TranscriptIdError("Please enter a transcript ID with a version, eg. ENST00000252486.9")
-
-            user_transcript_id = split_user_transcript_id[0]
-            user_transcript_version = split_user_transcript_id[1]
-            if user_choice == "1":
-                record = api.fetch_genbank_transcript(str(full_user_transcript_id))
-                print(f"Accession: {record["GBSeq_accession-version"]}")
-                print(f"Name: {record["GBSeq_definition"]}")
-                print(f"KeyWords: {record["GBSeq_keywords"]}")
-                print(f"Sequence: {record["GBSeq_sequence"].upper()}")
-                for feature in record["GBSeq_feature-table"]["GBFeature"]:
-                    if feature["GBFeature_key"] == "gene":
-                        print(f"GeneSymbol: {feature["GBFeature_quals"]["GBQualifier"][0]["GBQualifier_value"]}")
-                    elif feature["GBFeature_key"] == "CDS":
-                        print(f"CDS_Start: {feature["GBFeature_intervals"]["GBInterval"]["GBInterval_from"]}")
-                        print(f"CDS_End: {feature["GBFeature_intervals"]["GBInterval"]["GBInterval_to"]}")
-
-            elif user_choice == "2":
-                record = api.fetch_ensembl_38_transcript(user_transcript_id)
-                latest_version = record["metadata"]["version"]
-                latest_full_id = f"{record['metadata']['id']}.{latest_version}"
-
-                if int(user_transcript_version) != int(latest_version):
-                    print(
-                        f"The Ensembl REST API returns the current version for this stable ID "
-                        f"which is {latest_full_id}. To retrieve a specific version, you would "
-                        f"need the relevant Ensembl archive release."
-    )
-                structured_record = api.structure_ensembl_transcript(record)
-
-                print(f"Transcript_ID : {structured_record['id']}")
-                print(f"Transcript_name : {structured_record['name']}")
-                mane = api.extract_mane(record)
-                if mane:
-                    print(f"MANE Select transcript : {mane}")
-                else:
-                    print("No MANE select found")
-                print(f"Sequence : {structured_record['sequence']}")
-                print(f"CDS start : {structured_record['cds_start']}")
-                print(f"CDS end : {structured_record['cds_end']}")
-            elif user_choice == "3":
-                record = api.fetch_ensembl_37_transcript(user_transcript_id)
-                latest_version = record["metadata"]["version"]
-                latest_full_id = f"{record['metadata']['id']}.{latest_version}"
-
-                if int(user_transcript_version) != int(latest_version):
-                    print(
-                        f"The Ensembl REST API returns the current version for this stable ID "
-                        f"which is {latest_full_id}. To retrieve a specific version, you would "
-                        f"need the relevant Ensembl archive release."
-                    )
-
-                structured_record = api.structure_ensembl_transcript(record)
-
-                print(f"Transcript_ID : {structured_record['id']}")
-                print(f"Transcript_name : {structured_record['name']}")
-                mane = api.extract_mane(record)
-                if mane:
-                    print(f"MANE Select transcript : {mane}")
-                else:
-                    print("No MANE select found")
-                print(f"Sequence : {structured_record['sequence']}")
-                print(f"CDS start : {structured_record['cds_start']}")
-                print(f"CDS end : {structured_record['cds_end']}")
-            else:
-                print("Invalid choice. Please enter 1, 2, 3, or 4.")
-
-    except Exception as e:
-        logger = logging.getLogger("SeqKitSTP")
-        logger.error("An error occurred: %s", str(e))
-
+    # Examples to test code : ENST00000367770.8 (SCYL3), ENST00000420246.5 (TP53 alternative), HGNC:613(APOE).

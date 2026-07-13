@@ -236,3 +236,29 @@
 2026-06-19 09:34:28,137 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
 2026-06-19 09:34:28,137 | INFO | SeqKitSTP | Transcription complete
 2026-06-19 09:38:30,720 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-07-13 14:32:32,102 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-07-13 14:37:33,139 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-07-13 15:00:04,607 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-07-13 15:00:15,499 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-07-13 15:05:52,903 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-13 15:05:53,165 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000420246?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2909
+2026-07-13 15:05:53,221 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000420246 HTTP/1.1" 200 19272
+2026-07-13 15:05:54,572 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000141510?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 20080
+2026-07-13 15:06:14,512 | ERROR | SeqKitSTP | An error occurred: name 'user_transcript_id' is not defined
+2026-07-13 15:08:04,092 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): grch37.rest.ensembl.org:443
+2026-07-13 15:08:04,210 | DEBUG | urllib3.connectionpool | https://grch37.rest.ensembl.org:443 "GET /lookup/id/ENST00000420246?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2896
+2026-07-13 15:08:04,250 | DEBUG | urllib3.connectionpool | https://grch37.rest.ensembl.org:443 "GET /sequence/id/ENST00000420246 HTTP/1.1" 200 19215
+2026-07-13 15:08:04,252 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-13 15:08:04,310 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000141510?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 20080
+2026-07-13 15:08:26,914 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-13 15:08:26,989 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/hgnc_id/HGNC:613 HTTP/1.1" 200 None
+2026-07-13 15:09:26,625 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-13 15:09:26,676 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/hgnc_id/HGNC:613 HTTP/1.1" 200 None
+2026-07-13 15:09:37,649 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-13 15:09:37,697 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000420246?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2909
+2026-07-13 15:09:37,740 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000420246 HTTP/1.1" 200 19272
+2026-07-13 15:09:37,758 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000141510?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 20080
+2026-07-13 15:09:47,563 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): grch37.rest.ensembl.org:443
+2026-07-13 15:09:47,692 | DEBUG | urllib3.connectionpool | https://grch37.rest.ensembl.org:443 "GET /lookup/id/ENST00000420246?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2896
+2026-07-13 15:09:47,711 | DEBUG | urllib3.connectionpool | https://grch37.rest.ensembl.org:443 "GET /sequence/id/ENST00000420246 HTTP/1.1" 200 19215
+2026-07-13 15:09:47,744 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000141510?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 20080
