@@ -66,3 +66,69 @@ def test_extract_mane():#mocking a response because I just want to test the func
     }
     result = api.extract_mane(record)
     assert result == "ENST00000367770"
+
+def test_fetch_hgnc_gene_via_name_and_refseq_wrong_MANE_ID():#mane select doesnt pass validation because it doesn't start with NM or NR).
+    api = SequenceAPI()
+    mock_hgnc_response = Mock()
+    mock_hgnc_response.json.return_value = {
+        "response":{
+            "docs":[
+                {
+                    "hgnc_id":"HGNC:1234",
+                    "symbol":"Test",
+                    "mane_select":[
+                        "ENST000001234.5",
+                    ]
+                }
+            ]
+        }
+    }
+    api._get = Mock(return_value=mock_hgnc_response)
+    with pytest.raises(
+        TranscriptIdError,
+        match = "No MANE select found",
+    ):
+        api.fetch_hgnc_gene_via_name_and_refseq(
+            "Test",
+            ""
+        )
+
+def test_fetch_hgnc_gene_via_name_and_refseq_correct_MANE_ID():
+    api = SequenceAPI()
+    mock_hgnc_response = Mock()
+    mock_hgnc_response.json.return_value = {
+        "response":{
+            "docs":[
+                {
+                    "hgnc_id":"HGNC:1234",
+                    "symbol":"Test",
+                    "mane_select":[
+                        "NM_001234.5",
+                    ],
+                    "transcript_id":"1234.5",
+                    "transcript_sequence":"ACTG",
+                    "cds_start":"1",
+                    "cds_end":"4",
+                }
+            ]
+        }
+    }
+    mock_genbank_record = {
+                "GBSeq_accession-version": "NM_001234.5",
+                "GBSeq_sequence": "ACTG",
+    }
+    api._get = Mock(return_value=mock_hgnc_response)
+    api.fetch_genbank_transcript = Mock(
+        return_value=mock_genbank_record
+    )
+    result = api.fetch_hgnc_gene_via_name_and_refseq(
+        "Test",
+        "",
+    )
+    assert result["selected_refseq"] == "NM_001234.5"
+    assert result["metadata"]["response"]["docs"][0]["symbol"] == "Test"
+    assert result["sequence"] ["GBSeq_sequence"]=="ACTG"
+
+    api.fetch_genbank_transcript.assert_called_once_with(
+        "NM_001234.5"
+    )

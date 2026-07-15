@@ -262,3 +262,86 @@
 2026-07-13 15:09:47,692 | DEBUG | urllib3.connectionpool | https://grch37.rest.ensembl.org:443 "GET /lookup/id/ENST00000420246?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2896
 2026-07-13 15:09:47,711 | DEBUG | urllib3.connectionpool | https://grch37.rest.ensembl.org:443 "GET /sequence/id/ENST00000420246 HTTP/1.1" 200 19215
 2026-07-13 15:09:47,744 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000141510?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 20080
+2026-07-15 09:31:42,325 | ERROR | SeqKitSTP | An error occurred: string indices must be integers, not 'str'
+2026-07-15 09:36:19,846 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 09:36:21,414 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-15 09:36:21,414 | ERROR | SeqKitSTP | An error occurred: list indices must be integers or slices, not str
+2026-07-15 09:38:03,258 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 09:38:04,314 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-15 09:38:40,858 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 09:38:41,867 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-15 10:51:23,922 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 10:51:24,577 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/braf HTTP/1.1" 200 None
+2026-07-15 10:52:23,764 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 10:52:24,403 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/braf HTTP/1.1" 200 None
+2026-07-15 10:52:40,309 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 10:52:40,961 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/braf HTTP/1.1" 200 None
+2026-07-15 11:54:47,682 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 11:54:48,402 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-15 12:22:50,002 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 12:22:50,696 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-15 12:22:50,697 | ERROR | SeqKitSTP.utils.api_requests | User input doesn't start with 'NM-' or 'NR_
+NoneType: None
+2026-07-15 12:22:50,698 | ERROR | SeqKitSTP | An error occurred:  is not a supported RefSeq transcript.
+2026-07-15 12:23:32,456 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 12:23:33,073 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-15 12:23:33,074 | ERROR | SeqKitSTP.utils.api_requests | User input doesn't start with 'NM-' or 'NR_
+NoneType: None
+2026-07-15 12:23:33,074 | ERROR | SeqKitSTP | An error occurred:  is not a supported RefSeq transcript.
+2026-07-15 12:43:46,824 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 12:43:47,493 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-15 12:43:47,496 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): eutils.ncbi.nlm.nih.gov:443
+2026-07-15 12:43:48,576 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_004333.6&retmode=xml HTTP/1.1" 200 None
+2026-07-15 12:43:48,675 | ERROR | SeqKitSTP | An error occurred: 0
+2026-07-15 12:45:23,172 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 12:45:23,839 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-15 12:45:23,842 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): eutils.ncbi.nlm.nih.gov:443
+2026-07-15 12:45:24,873 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_004333.6&retmode=xml HTTP/1.1" 200 None
+2026-07-15 12:45:24,970 | ERROR | SeqKitSTP | An error occurred: 'ensembl_gene_id'
+2026-07-15 12:46:31,082 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 12:46:31,731 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-15 12:46:31,733 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): eutils.ncbi.nlm.nih.gov:443
+2026-07-15 12:46:32,979 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_004333.6&retmode=xml HTTP/1.1" 200 None
+2026-07-15 12:46:33,069 | ERROR | SeqKitSTP | An error occurred: 'Response' object is not subscriptable
+2026-07-15 12:48:11,305 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-15 12:48:11,787 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_004333.6&retmode=xml HTTP/1.1" 200 None
+2026-07-15 12:48:11,860 | ERROR | SeqKitSTP | An error occurred: 'Response' object is not subscriptable
+2026-07-15 12:49:37,079 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 12:49:37,770 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-15 12:49:37,772 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): eutils.ncbi.nlm.nih.gov:443
+2026-07-15 12:49:38,663 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_004333.6&retmode=xml HTTP/1.1" 200 None
+2026-07-15 12:49:38,746 | ERROR | SeqKitSTP | An error occurred: 'ensembl_gene_id'
+2026-07-15 12:50:32,003 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 12:50:32,663 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-15 12:50:32,663 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): eutils.ncbi.nlm.nih.gov:443
+2026-07-15 12:50:33,677 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_004333.6&retmode=xml HTTP/1.1" 200 None
+2026-07-15 12:53:27,712 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/TP53 HTTP/1.1" 200 None
+2026-07-15 12:53:28,028 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_000546.6&retmode=xml HTTP/1.1" 200 None
+2026-07-15 12:53:51,391 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRCA1 HTTP/1.1" 200 None
+2026-07-15 12:53:51,844 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_007294.4&retmode=xml HTTP/1.1" 200 None
+2026-07-15 12:54:20,444 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/TP53 HTTP/1.1" 200 None
+2026-07-15 12:54:20,729 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_000546.6&retmode=xml HTTP/1.1" 200 None
+2026-07-15 12:54:50,969 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/hgnc_id/HGNC:11998 HTTP/1.1" 200 None
+2026-07-15 12:55:16,998 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 12:55:17,658 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/braf HTTP/1.1" 200 None
+2026-07-15 12:55:17,661 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): eutils.ncbi.nlm.nih.gov:443
+2026-07-15 12:55:18,513 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_004333.4&retmode=xml HTTP/1.1" 200 None
+2026-07-15 12:55:36,695 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/braf HTTP/1.1" 200 None
+2026-07-15 12:55:36,962 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_004333.6&retmode=xml HTTP/1.1" 200 None
+2026-07-15 13:12:48,762 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 13:12:49,907 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-15 13:12:49,913 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): eutils.ncbi.nlm.nih.gov:443
+2026-07-15 13:12:51,220 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_004333.6&retmode=xml HTTP/1.1" 200 None
+2026-07-15 13:12:51,552 | ERROR | SeqKitSTP | An error occurred: cannot access local variable 'interval' where it is not associated with a value
+2026-07-15 13:13:23,940 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 13:13:24,989 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/braf HTTP/1.1" 200 None
+2026-07-15 13:13:24,993 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): eutils.ncbi.nlm.nih.gov:443
+2026-07-15 13:13:26,344 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_004333.6&retmode=xml HTTP/1.1" 200 None
+2026-07-15 13:14:57,536 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 13:14:58,631 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/TP53 HTTP/1.1" 200 None
+2026-07-15 13:14:58,647 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): eutils.ncbi.nlm.nih.gov:443
+2026-07-15 13:15:00,039 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_000546.6&retmode=xml HTTP/1.1" 200 None
+2026-07-15 13:18:25,019 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-15 13:18:26,139 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/braf HTTP/1.1" 200 None
+2026-07-15 13:18:26,143 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): eutils.ncbi.nlm.nih.gov:443
+2026-07-15 13:18:27,513 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_004333.6&retmode=xml HTTP/1.1" 200 None
