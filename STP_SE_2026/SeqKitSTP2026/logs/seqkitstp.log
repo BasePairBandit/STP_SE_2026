@@ -303,3 +303,19 @@
 2026-07-20 14:44:40,954 | INFO | SeqKitSTP | Transcription complete
 2026-07-20 14:44:40,955 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
 2026-07-20 14:44:40,955 | INFO | SeqKitSTP | Translation complete
+2026-07-20 14:47:59,989 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-20 14:48:00,051 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000420246?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2909
+2026-07-20 14:48:00,069 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000420246 HTTP/1.1" 200 19272
+2026-07-20 14:48:00,100 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000141510?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 20080
+2026-07-20 14:48:00,101 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-20 14:48:00,101 | INFO | SeqKitSTP | Transcription complete
+2026-07-20 14:48:00,102 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-20 14:48:00,102 | INFO | SeqKitSTP | Transcription complete
+2026-07-20 14:48:00,103 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-20 14:48:00,103 | INFO | SeqKitSTP | Translation complete
+2026-07-20 14:50:12,815 | ERROR | SeqKitSTP | Stop codon not found after start or invalid stop codon entered
+2026-07-20 14:50:12,816 | ERROR | SeqKitSTP | An error occurred: Stop codon not found after start or invalid stop codon entered
+2026-07-20 14:50:40,976 | ERROR | SeqKitSTP | Stop codon not found after start or invalid stop codon entered
+2026-07-20 14:50:40,976 | ERROR | SeqKitSTP | An error occurred: Stop codon not found after start or invalid stop codon entered
+2026-07-20 14:56:03,780 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-20 14:56:03,780 | INFO | SeqKitSTP | Translation complete

@@ -84,7 +84,8 @@ def run_api_menu():
                 transcribe(sequence)
                 rna_sequence = transcribe(sequence)
                 translate(rna_sequence,"","") 
-                #using default here for now but would be better to slice out the codons based on CDS_start and CDS end. Leaving for now as working with defaults".
+                #using default here for now but would be better to slice out the codons based on CDS_start and CDS end.
+                #Because at the moment it is just stopping at the first uga?
 
             elif user_choice == "3":
                 record = api.fetch_ensembl_37_transcript(user_transcript_id)
