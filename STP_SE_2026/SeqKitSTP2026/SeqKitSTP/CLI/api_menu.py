@@ -1,4 +1,6 @@
 from SeqKitSTP.utils.api_requests import SequenceAPI, TranscriptIdError
+from SeqKitSTP.modules.transcriber import transcribe
+from SeqKitSTP.modules.translater import translate
 import logging
 logger = logging.getLogger(__name__)
 
@@ -78,6 +80,12 @@ def run_api_menu():
                 print(f"Sequence : {structured_record['sequence']}")
                 print(f"CDS start : {structured_record['cds_start']}")
                 print(f"CDS end : {structured_record['cds_end']}")
+                sequence = structured_record['sequence']
+                transcribe(sequence)
+                rna_sequence = transcribe(sequence)
+                translate(rna_sequence,"","") 
+                #using default here for now but would be better to slice out the codons based on CDS_start and CDS end. Leaving for now as working with defaults".
+
             elif user_choice == "3":
                 record = api.fetch_ensembl_37_transcript(user_transcript_id)
                 latest_version = record["metadata"]["version"]
