@@ -24,12 +24,21 @@ def run_api_menu():
                     2. Ensembl (GRCh38)
                     3. Ensembl (GRCh37)
                     4. HGNC (ID)
+<<<<<<< HEAD
                     5. HGNC (gene name)
                     6. Main menu (Back)
                         """)
             user_choice = input("Enter your choice (1, 2, 3, 4 or 5): ")
             if user_choice == "6":
                 print("Exiting SeqKitSTP. Goodbye!")
+=======
+                    5. HGNC (Symbol + refseq)
+                    6. Main menu (Back)
+                        """)
+            user_choice = input("Enter your choice (1, 2, 3, 4, 5 or 6): ")
+            if user_choice == "6":
+                print("Exiting API lookup. Goodbye!")
+>>>>>>> e3aaca635ecbb6012719d8aa8ab7f2920fc34a21
                 break
             if user_choice == "4":
                 HGNC_ID = input("Enter HGNC_ID:")
@@ -37,8 +46,8 @@ def run_api_menu():
                 structured_record = api.structure_HGNC_transcript(record)
                 print(f"HGNC_ID : {structured_record['HGNC_id']}")
                 print(f"Symbol : {structured_record['symbol']}")
-                print(f"ensembl_gene_id : {structured_record['ensembl_gene_id']}")
                 print(f"mane_select : {structured_record['mane_select']}")
+<<<<<<< HEAD
                 continue
             if user_choice == "5":
                 HGNC_gene_name = input("Enter gene name:")
@@ -49,11 +58,28 @@ def run_api_menu():
                 print(f"ensembl_gene_id : {structured_record['ensembl_gene_id']}")
                 print(f"mane_select : {structured_record['mane_select']}")
                 continue
+=======
+              
+            if user_choice == "5":
+                HGNC_symbol = input("Enter gene symbol: ").strip()
+                HGNC_refseq = input(
+                    "Enter RefSeq transcript ID, or press Enter to use the MANE select transcript: "
+                ).strip()
+                record = api.fetch_hgnc_gene_via_name_and_refseq(HGNC_symbol,HGNC_refseq)
+                structured_record = api.structure_fetch_hgnc_gene_via_name_and_refseq(record)
+                print(f"HGNC_ID : {structured_record['HGNC_id']}")
+                print(f"Symbol : {structured_record['symbol']}")
+                print(f"mane_select : {structured_record['mane_select']}")
+                print(f"RefSeq transcript used:{structured_record['transcript_id']}")
+                print(f"RefSeq sequence:{structured_record['transcript_sequence']}")
+                print(f"CDS start: {structured_record['cds_start']}")
+                print(f"CDS end: {structured_record['cds_end']}")
+                break
+>>>>>>> e3aaca635ecbb6012719d8aa8ab7f2920fc34a21
             full_user_transcript_id = input("Enter transcript ID (including version) :")
             split_user_transcript_id = full_user_transcript_id.split(".")
             if len(split_user_transcript_id) != 2:
                 raise TranscriptIdError("Please enter a transcript ID with a version, eg. ENST00000252486.9")
-
             user_transcript_id = split_user_transcript_id[0]
             user_transcript_version = split_user_transcript_id[1]
             if user_choice == "1":
