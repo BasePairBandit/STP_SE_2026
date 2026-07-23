@@ -229,7 +229,6 @@ class SequenceAPI:
         return{
             "metadata":meta_response.json(),
         }
-<<<<<<< HEAD
     
     def fetch_hgnc_gene_by_name(self, HGNC_gene_name):
         """
@@ -246,50 +245,7 @@ class SequenceAPI:
         )    
         return{
             "metadata":meta_response.json(),
-=======
-    def fetch_hgnc_gene_via_name_and_refseq(self, HGNC_symbol,HGNC_refseq=""):
-        """
-        User enters gene symbol and refseq ID and this function queries the API.
-        Made refseq optional
-        """
-        meta_response = self._get(
-            self._hgnc_url,
-            f"/fetch/symbol/{HGNC_symbol}",
-            headers={"Accept": "application/json"},
-        )   
 
-        metadata = meta_response.json()
-        docs = metadata["response"]["docs"]
-
-        if not docs:
-            raise TranscriptIdError(f"No HGNC record found for the entered gene symbol {HGNC_symbol}.")
-
-        doc = docs[0]
-
-        if HGNC_refseq:
-            selected_refseq = HGNC_refseq.strip()
-            self._validate_refseq_transcript(selected_refseq)
-        else:
-            mane_select = doc.get("mane_select",[])
-
-            selected_refseq = next((
-                transcript 
-                    for transcript in mane_select
-                    if transcript.startswith(("NM_","NR_"))
-            ),
-            None,
-        )
-            if selected_refseq is None:
-                raise TranscriptIdError(f"No MANE select found for RefSeq supplied")
-
- 
-        genbank_record = self.fetch_genbank_transcript(selected_refseq)
-
-        return{
-            "metadata":metadata,
-            "sequence":genbank_record,
-            "selected_refseq":selected_refseq,
->>>>>>> e3aaca635ecbb6012719d8aa8ab7f2920fc34a21
         }
 
 
@@ -375,49 +331,18 @@ class SequenceAPI:
             "mane_select" : doc.get("mane_select"),
         }
     
-<<<<<<< HEAD
     def structure_HGNC_gene_by_name(self,record):
 
         doc = record["metadata"]["response"]["docs"][0]
-=======
-    # Examples to test code : ENST00000367770.8 (SCYL3), ENST00000420246.5 (TP53 alternative), HGNC:613(APOE).
-   
-    def structure_fetch_hgnc_gene_via_name_and_refseq(self,record):
 
-        docs = record["metadata"]["response"]["docs"]
-
-        if not docs:
-            raise TranscriptIdError("No HGNC record found")
-        doc = docs[0]
-        genbank_record = record["sequence"]
-
-        cds_start = None
-        cds_end = None
-
-        features = genbank_record["GBSeq_feature-table"]["GBFeature"]
-        for feature in features:
-            if feature["GBFeature_key"]=="CDS":
-                interval = feature["GBFeature_intervals"]["GBInterval"]
-
-                cds_start = int(interval["GBInterval_from"])
-                cds_end = int(interval["GBInterval_to"])
-                break
->>>>>>> e3aaca635ecbb6012719d8aa8ab7f2920fc34a21
 
         return{
             "HGNC_id": doc["hgnc_id"],
             "symbol": doc["symbol"],
-<<<<<<< HEAD
+
             "ensembl_gene_id": doc.get("ensembl_gene_id"),
             "mane_select" : doc.get("mane_select"),
         }
     
     # Examples to test code : ENST00000646891.2 (BRAF), ENST00000367770.8 (SCYL3), ENST00000420246.5 (TP53 alternative), HGNC:613(APOE).
-=======
-            "mane_select" : doc.get("mane_select"),
-            "transcript_id":genbank_record["GBSeq_accession-version"],
-            "transcript_sequence":genbank_record["GBSeq_sequence"].upper(),
-            "cds_start": cds_start,
-            "cds_end":cds_end,
-        }
->>>>>>> e3aaca635ecbb6012719d8aa8ab7f2920fc34a21
+

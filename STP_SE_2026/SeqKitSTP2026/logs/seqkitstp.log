@@ -693,3 +693,95 @@ NoneType: None
 2026-07-15 13:18:26,143 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): eutils.ncbi.nlm.nih.gov:443
 2026-07-15 13:18:27,513 | DEBUG | urllib3.connectionpool | https://eutils.ncbi.nlm.nih.gov:443 "GET /entrez/eutils/efetch.fcgi?db=nucleotide&id=NM_004333.6&retmode=xml HTTP/1.1" 200 None
 >>>>>>> e3aaca635ecbb6012719d8aa8ab7f2920fc34a21
+2026-07-23 13:44:45,716 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-23 13:44:45,810 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/KCNA1 HTTP/1.1" 200 None
+2026-07-23 13:44:52,090 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-23 13:45:01,715 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000382545?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 1007
+2026-07-23 13:45:07,678 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000382545 HTTP/1.1" 200 8488
+2026-07-23 13:45:13,436 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000111262?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 3694
+2026-07-23 13:45:13,450 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-23 13:45:13,450 | ERROR | SeqKitSTP | An error occurred: [Errno 28] No space left on device
+2026-07-23 13:47:00,983 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/KCNA1 HTTP/1.1" 200 None
+2026-07-23 13:47:03,357 | DEBUG | urllib3.connectionpool | Resetting dropped connection: rest.ensembl.org
+2026-07-23 13:47:04,120 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000382545?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 1007
+2026-07-23 13:47:24,135 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000382545 HTTP/1.1" 503 None
+2026-07-23 13:47:24,136 | ERROR | SeqKitSTP.utils.api_requests | Failed GET request: https://rest.ensembl.org/sequence/id/ENST00000382545
+Traceback (most recent call last):
+  File "/home/sachin/STP_SE_2026/STP_SE_2026/SeqKitSTP2026/SeqKitSTP/utils/api_requests.py", line 63, in _get
+    response.raise_for_status()
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 503 Server Error: Service Unavailable for url: https://rest.ensembl.org/sequence/id/ENST00000382545
+2026-07-23 13:47:24,137 | ERROR | SeqKitSTP | An error occurred: 503 Server Error: Service Unavailable for url: https://rest.ensembl.org/sequence/id/ENST00000382545
+2026-07-23 13:47:38,799 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/apoe HTTP/1.1" 200 None
+2026-07-23 13:47:44,461 | DEBUG | urllib3.connectionpool | Resetting dropped connection: rest.ensembl.org
+2026-07-23 13:47:45,512 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000252486?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 1396
+2026-07-23 13:48:15,545 | ERROR | SeqKitSTP.utils.api_requests | Failed GET request: https://rest.ensembl.org/sequence/id/ENST00000252486
+Traceback (most recent call last):
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/urllib3/connectionpool.py", line 534, in _make_request
+    response = conn.getresponse()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/urllib3/connection.py", line 571, in getresponse
+    httplib_response = super().getresponse()
+                       ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/http/client.py", line 1428, in getresponse
+    response.begin()
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/http/client.py", line 331, in begin
+    version, status, reason = self._read_status()
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/http/client.py", line 292, in _read_status
+    line = str(self.fp.readline(_MAXLINE + 1), "iso-8859-1")
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/urllib3/util/retry.py", line 498, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/urllib3/connectionpool.py", line 536, in _make_request
+    self._raise_timeout(err=e, url=url, timeout_value=read_timeout)
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/urllib3/connectionpool.py", line 367, in _raise_timeout
+    raise ReadTimeoutError(
+urllib3.exceptions.ReadTimeoutError: HTTPSConnectionPool(host='rest.ensembl.org', port=443): Read timed out. (read timeout=30)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/sachin/STP_SE_2026/STP_SE_2026/SeqKitSTP2026/SeqKitSTP/utils/api_requests.py", line 56, in _get
+    response = self.session.get(
+               ^^^^^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/requests/sessions.py", line 671, in get
+    return self.request("GET", url, params=params, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/requests/adapters.py", line 742, in send
+    raise ReadTimeout(e, request=request)
+requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='rest.ensembl.org', port=443): Read timed out. (read timeout=30)
+2026-07-23 13:48:15,553 | ERROR | SeqKitSTP | An error occurred: HTTPSConnectionPool(host='rest.ensembl.org', port=443): Read timed out. (read timeout=30)
