@@ -6,7 +6,7 @@ from SeqKitSTP.CLI.api_menu import run_api_menu
 
 def main():
     while True:
-        print("""
+        print(r"""
  ____             _  ___ _   ____   ___ ____   __   
 / ___|  ___  __ _| |/ (_) |_|___ \ / _ \___ \ / /_  
 \___ \ / _ \/ _` | ' /| | __| __) | | | |__) | '_ \ 
@@ -16,7 +16,7 @@ def main():
 
         Select an option:
         1. Sequence tools
-        2. Database/API lookup
+        2. API lookup
         3. Exit
         """)
 

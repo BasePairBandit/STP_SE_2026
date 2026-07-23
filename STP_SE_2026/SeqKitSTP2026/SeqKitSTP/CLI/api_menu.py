@@ -1,6 +1,8 @@
 from SeqKitSTP.utils.api_requests import SequenceAPI, TranscriptIdError
 from SeqKitSTP.modules.transcriber import transcribe
 from SeqKitSTP.modules.translater import translate
+from SeqKitSTP.modules.blockify_sequence import blockify_seq
+from SeqKitSTP.modules.genify_sequence import genify_seq
 import logging
 logger = logging.getLogger(__name__)
 
@@ -21,17 +23,27 @@ def run_api_menu():
                     1. Genbank
                     2. Ensembl (GRCh38)
                     3. Ensembl (GRCh37)
-                    4. HGNC
-                    5. Main menu (Back)
+                    4. HGNC (ID)
+                    5. HGNC (gene name)
+                    6. Main menu (Back)
                         """)
             user_choice = input("Enter your choice (1, 2, 3, 4 or 5): ")
-            if user_choice == "5":
+            if user_choice == "6":
                 print("Exiting SeqKitSTP. Goodbye!")
                 break
             if user_choice == "4":
                 HGNC_ID = input("Enter HGNC_ID:")
                 record = api.fetch_hgnc_gene(HGNC_ID)
                 structured_record = api.structure_HGNC_transcript(record)
+                print(f"HGNC_ID : {structured_record['HGNC_id']}")
+                print(f"Symbol : {structured_record['symbol']}")
+                print(f"ensembl_gene_id : {structured_record['ensembl_gene_id']}")
+                print(f"mane_select : {structured_record['mane_select']}")
+                continue
+            if user_choice == "5":
+                HGNC_gene_name = input("Enter gene name:")
+                record = api.fetch_hgnc_gene_by_name(HGNC_gene_name)
+                structured_record = api.structure_HGNC_gene_by_name(record)
                 print(f"HGNC_ID : {structured_record['HGNC_id']}")
                 print(f"Symbol : {structured_record['symbol']}")
                 print(f"ensembl_gene_id : {structured_record['ensembl_gene_id']}")
@@ -81,11 +93,19 @@ def run_api_menu():
                 print(f"CDS start : {structured_record['cds_start']}")
                 print(f"CDS end : {structured_record['cds_end']}")
                 sequence = structured_record['sequence']
-                transcribe(sequence)
                 rna_sequence = transcribe(sequence)
                 translate(rna_sequence,"","") 
                 #using default here for now but would be better to slice out the codons based on CDS_start and CDS end.
                 #Because at the moment it is just stopping at the first uga?
+
+                blocked_sequence = blockify_seq(sequence,5)
+                output_file_blocked = "blocked_sequence.txt"
+                with open(output_file_blocked, "w") as f: # Repeating from sequencing_menu as the blockify function doesn't have this save to file option.
+                                    f.write(blocked_sequence)
+                genified_sequence = genify_seq(blocked_sequence)
+                output_file_genified = "genbank_sequence.txt"
+                with open(output_file_genified, "w") as f:
+                     f.write(genified_sequence)
 
             elif user_choice == "3":
                 record = api.fetch_ensembl_37_transcript(user_transcript_id)

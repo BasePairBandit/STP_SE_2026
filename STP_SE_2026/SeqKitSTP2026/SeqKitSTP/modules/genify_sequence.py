@@ -11,7 +11,7 @@ def genify_seq(blocked_sequence: str) -> str:
 
     blocks = blocked_sequence.split()
 
-    gen_block_size = input("Enter block size for genbank file output")
+    gen_block_size = input("Enter block size for genbank file output:")
     try:
         gen_block_size = int(gen_block_size)
     except ValueError:

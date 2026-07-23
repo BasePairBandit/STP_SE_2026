@@ -319,3 +319,291 @@
 2026-07-20 14:50:40,976 | ERROR | SeqKitSTP | An error occurred: Stop codon not found after start or invalid stop codon entered
 2026-07-20 14:56:03,780 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
 2026-07-20 14:56:03,780 | INFO | SeqKitSTP | Translation complete
+2026-07-21 14:55:08,853 | INFO | SeqKitSTP | Initiating blockifying the sequence
+2026-07-21 14:55:18,040 | ERROR | SeqKitSTP | Invalid base entered in the dna sequence
+2026-07-21 14:55:18,040 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [a] [c] [t] [g]
+2026-07-21 14:55:52,894 | INFO | SeqKitSTP | Initiating blockifying the sequence
+2026-07-21 14:56:13,033 | ERROR | SeqKitSTP | Invalid base entered in the dna sequence
+2026-07-21 14:56:13,033 | ERROR | SeqKitSTP | An error occurred: DNA sequence must only contain these letters: [a] [c] [t] [g]
+2026-07-21 14:57:05,563 | INFO | SeqKitSTP | Initiating blockifying the sequence
+2026-07-21 14:59:49,971 | INFO | SeqKitSTP | Initiating blockifying the sequence
+2026-07-21 14:59:56,909 | INFO | SeqKitSTP | Writing to output file: blocked_sequence.txt
+2026-07-21 14:59:56,910 | INFO | SeqKitSTP | Initiating genifying the blocked sequence
+2026-07-21 14:59:56,910 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-21 15:00:28,907 | INFO | SeqKitSTP | Initiating blockifying the sequence
+2026-07-21 15:10:00,998 | ERROR | SeqKitSTP | Block size must be numerical
+2026-07-21 15:10:00,999 | ERROR | SeqKitSTP | An error occurred: Block size must be numerical
+2026-07-21 15:12:28,687 | INFO | SeqKitSTP | Initiating blockifying the sequence
+2026-07-21 15:26:55,286 | DEBUG | SeqKitSTP | DEBUG: Detailed info for debugging problems.
+2026-07-21 15:26:55,286 | INFO | SeqKitSTP | INFO: The program has started successfully.
+2026-07-21 15:26:55,286 | WARNING | SeqKitSTP | WARNING: Something unexpected happened, but continuing.
+2026-07-21 15:26:55,286 | ERROR | SeqKitSTP | ERROR: Something failed during execution.
+2026-07-21 15:26:55,286 | CRITICAL | SeqKitSTP | CRITICAL: Serious failure - program may stop.
+2026-07-21 15:26:55,286 | INFO | SeqKitSTP | Demo complete. Check the console and log file.
+2026-07-22 19:31:23,571 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 19:31:25,862 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000420246?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2909
+2026-07-22 19:31:25,945 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000420246 HTTP/1.1" 200 19272
+2026-07-22 19:31:38,702 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000141510?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 20080
+2026-07-22 19:31:38,705 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 19:31:38,705 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 19:31:38,706 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 19:31:38,706 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 19:31:38,707 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 19:31:38,707 | INFO | SeqKitSTP | Translation complete
+2026-07-22 19:33:40,416 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 19:33:40,459 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000420246?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2909
+2026-07-22 19:33:40,485 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000420246 HTTP/1.1" 200 19272
+2026-07-22 19:33:40,511 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000141510?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 20080
+2026-07-22 19:33:40,513 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 19:33:40,513 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 19:33:40,514 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 19:33:40,514 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 19:33:40,514 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 19:33:40,514 | INFO | SeqKitSTP | Translation complete
+2026-07-22 19:48:28,320 | ERROR | SeqKitSTP | An error occurred: braf is not a supported HGNC ID.
+2026-07-22 19:49:39,768 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-22 19:49:39,851 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/braf HTTP/1.1" 200 None
+2026-07-22 19:50:21,858 | ERROR | SeqKitSTP | An error occurred: Please enter a transcript ID with a version, eg. ENST00000252486.9
+2026-07-22 19:50:32,074 | ERROR | SeqKitSTP | An error occurred: ENSG00000157764 is not a supported Ensembl transcript.
+2026-07-22 19:51:08,925 | ERROR | SeqKitSTP | An error occurred: ENSG00000157764 is not a supported Ensembl transcript.
+2026-07-22 19:51:23,352 | ERROR | SeqKitSTP.utils.api_requests | User input doesn't start with 'NM-' or 'NR_
+NoneType: None
+2026-07-22 19:51:23,353 | ERROR | SeqKitSTP | An error occurred: ENSG00000157764.8 is not a supported RefSeq transcript.
+2026-07-22 19:52:45,514 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 19:52:48,620 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 19:52:48,686 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 19:52:49,992 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 19:52:50,125 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 19:52:50,125 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 19:52:50,133 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 19:52:50,133 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 19:52:50,137 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 19:52:50,137 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:00:40,233 | DEBUG | urllib3.connectionpool | Resetting dropped connection: rest.ensembl.org
+2026-07-22 20:00:41,431 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:00:42,412 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:00:44,592 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:00:44,687 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:00:44,687 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:00:44,695 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:00:44,695 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:00:44,699 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:00:44,699 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:02:07,107 | DEBUG | urllib3.connectionpool | Resetting dropped connection: rest.ensembl.org
+2026-07-22 20:02:07,151 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:02:07,166 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:02:07,194 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:02:07,256 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:02:07,256 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:02:07,264 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:02:07,264 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:02:07,268 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:02:07,268 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:02:40,556 | DEBUG | urllib3.connectionpool | Resetting dropped connection: rest.ensembl.org
+2026-07-22 20:02:40,596 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:02:40,637 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:02:40,665 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:02:40,762 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:02:40,762 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:02:40,770 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:02:40,770 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:02:40,774 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:02:40,774 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:04:42,964 | DEBUG | urllib3.connectionpool | Resetting dropped connection: rest.ensembl.org
+2026-07-22 20:04:43,494 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000420246?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2909
+2026-07-22 20:04:43,635 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000420246 HTTP/1.1" 200 19272
+2026-07-22 20:04:45,050 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000141510?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 20080
+2026-07-22 20:04:45,053 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:04:45,053 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:04:45,054 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:04:45,054 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:04:45,054 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:04:45,054 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:05:15,579 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 20:05:15,643 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000420246?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2909
+2026-07-22 20:05:15,665 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000420246 HTTP/1.1" 200 19272
+2026-07-22 20:05:15,680 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000141510?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 20080
+2026-07-22 20:05:15,682 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:05:15,682 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:05:15,682 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:05:15,682 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:05:15,684 | ERROR | SeqKitSTP | An error occurred: genify_seq() takes 1 positional argument but 2 were given
+2026-07-22 20:05:38,026 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 20:05:38,076 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000420246?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2909
+2026-07-22 20:05:38,090 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000420246 HTTP/1.1" 200 19272
+2026-07-22 20:05:38,103 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000141510?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 20080
+2026-07-22 20:05:38,106 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:05:38,106 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:05:38,107 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:05:38,107 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:05:38,108 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-22 20:09:29,590 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 20:09:31,217 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:09:31,291 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:09:32,929 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:09:33,032 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:09:33,032 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:09:33,037 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:09:33,037 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:09:33,049 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-22 20:10:52,673 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 20:10:52,714 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:10:52,729 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:10:52,762 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:10:52,860 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:10:52,860 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:10:52,864 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:10:52,864 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:10:52,876 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-22 20:13:08,747 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 20:13:08,789 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:13:08,802 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:13:08,826 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:13:08,909 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:13:08,909 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:13:08,914 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:13:08,914 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:13:08,926 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-22 20:13:53,942 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 20:13:53,972 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:13:53,986 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:13:54,004 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:13:54,100 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:13:54,100 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:13:54,106 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:13:54,106 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:13:54,128 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-22 20:15:13,299 | INFO | SeqKitSTP | Initiating blockifying the sequence
+2026-07-22 20:15:53,716 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 20:15:54,029 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:15:54,047 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:15:54,081 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:15:54,175 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:15:54,175 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:15:54,179 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:15:54,179 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:15:54,191 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-22 20:17:25,345 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 20:17:25,391 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:17:25,405 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:17:25,438 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:17:25,533 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:17:25,533 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:17:25,537 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:17:25,537 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:17:25,760 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-22 20:19:02,094 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 20:19:02,135 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:19:02,151 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:19:02,182 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:19:02,266 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:19:02,266 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:19:02,270 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:19:02,270 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:19:02,283 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-22 20:20:05,750 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 20:20:15,060 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:20:15,175 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:20:27,854 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:20:27,911 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:20:27,911 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:20:27,915 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:20:27,915 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:20:27,927 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-22 20:21:51,528 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 20:21:51,616 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:21:51,633 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:21:51,662 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:21:51,717 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:21:51,717 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:21:51,721 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:21:51,721 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:21:51,734 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-22 20:26:50,344 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 20:26:51,066 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:26:51,136 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:26:57,049 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:26:57,109 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:26:57,109 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:26:57,113 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:26:57,113 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:26:57,127 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-22 20:28:29,286 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-22 20:28:29,423 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-22 20:28:29,445 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-22 20:28:29,481 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-22 20:28:29,540 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-22 20:28:29,540 | INFO | SeqKitSTP | Transcription complete
+2026-07-22 20:28:29,544 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-22 20:28:29,544 | INFO | SeqKitSTP | Translation complete
+2026-07-22 20:28:29,693 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-23 10:23:13,856 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-23 10:23:13,938 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/BRAF HTTP/1.1" 200 None
+2026-07-23 10:23:32,232 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-23 10:23:32,379 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000646891?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4110
+2026-07-23 10:23:35,151 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000646891 HTTP/1.1" 200 194405
+2026-07-23 10:23:35,482 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000157764?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16579
+2026-07-23 10:23:35,532 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-23 10:23:35,533 | INFO | SeqKitSTP | Transcription complete
+2026-07-23 10:23:35,539 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-23 10:23:35,540 | INFO | SeqKitSTP | Translation complete
+2026-07-23 10:23:35,554 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-23 10:31:48,371 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-23 10:31:48,480 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/apoe HTTP/1.1" 200 None
+2026-07-23 10:31:54,746 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-23 10:31:55,165 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000252486?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 1396
+2026-07-23 10:31:55,241 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000252486 HTTP/1.1" 200 3736
+2026-07-23 10:31:56,290 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000130203?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16645
+2026-07-23 10:31:56,291 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-23 10:31:56,291 | INFO | SeqKitSTP | Transcription complete
+2026-07-23 10:31:56,292 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-23 10:31:56,292 | INFO | SeqKitSTP | Translation complete
+2026-07-23 10:31:56,292 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-23 10:48:40,385 | ERROR | SeqKitSTP | An error occurred: Please enter a transcript ID with a version, eg. ENST00000252486.9
+2026-07-23 10:49:23,673 | ERROR | SeqKitSTP | An error occurred: Please enter a transcript ID with a version, eg. ENST00000252486.9
+2026-07-23 10:49:47,568 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-07-23 10:50:01,219 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-23 10:50:01,297 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/GLRB HTTP/1.1" 200 None
+2026-07-23 10:50:09,342 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-23 10:50:09,678 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000264428?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2555
+2026-07-23 10:50:15,390 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000264428 HTTP/1.1" 200 96080
+2026-07-23 10:50:15,859 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000109738?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 12295
+2026-07-23 10:50:15,866 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-23 10:50:15,866 | INFO | SeqKitSTP | Transcription complete
+2026-07-23 10:50:15,869 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-23 10:50:15,869 | INFO | SeqKitSTP | Translation complete
+2026-07-23 10:50:15,876 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-23 10:51:04,098 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-23 10:51:04,146 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/GLRB HTTP/1.1" 200 None
+2026-07-23 10:51:14,140 | ERROR | SeqKitSTP | An error occurred: Please enter a transcript ID with a version, eg. ENST00000252486.9
+2026-07-23 10:51:20,798 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/glrb HTTP/1.1" 200 None
+2026-07-23 10:51:25,421 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-23 10:51:25,461 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000264428?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2555
+2026-07-23 10:51:25,476 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000264428 HTTP/1.1" 200 96080
+2026-07-23 10:51:25,499 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000109738?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 12295
+2026-07-23 10:51:25,508 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-23 10:51:25,508 | INFO | SeqKitSTP | Transcription complete
+2026-07-23 10:51:25,510 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-23 10:51:25,510 | INFO | SeqKitSTP | Translation complete
+2026-07-23 10:51:25,517 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-23 10:52:57,458 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-23 10:52:57,510 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000264428?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2555
+2026-07-23 10:52:57,529 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000264428 HTTP/1.1" 200 96080
+2026-07-23 10:52:57,556 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000109738?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 12295
+2026-07-23 10:52:57,563 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-23 10:52:57,563 | INFO | SeqKitSTP | Transcription complete
+2026-07-23 10:52:57,565 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-23 10:52:57,565 | INFO | SeqKitSTP | Translation complete
+2026-07-23 10:52:59,920 | ERROR | SeqKitSTP | An error occurred: '<=' not supported between instances of 'str' and 'int'
+2026-07-23 10:53:30,481 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-23 10:53:30,540 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/GLRB HTTP/1.1" 200 None
+2026-07-23 10:53:35,573 | ERROR | SeqKitSTP | An error occurred: Please enter a transcript ID with a version, eg. ENST00000252486.9
+2026-07-23 10:53:40,310 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-23 10:53:40,350 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000264428?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 2555
+2026-07-23 10:53:40,378 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000264428 HTTP/1.1" 200 96080
+2026-07-23 10:53:40,409 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000109738?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 12295
+2026-07-23 10:53:40,415 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-23 10:53:40,415 | INFO | SeqKitSTP | Transcription complete
+2026-07-23 10:53:40,418 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-23 10:53:40,418 | INFO | SeqKitSTP | Translation complete
+2026-07-23 10:53:40,424 | INFO | SeqKitSTP | Formatting GenBank output

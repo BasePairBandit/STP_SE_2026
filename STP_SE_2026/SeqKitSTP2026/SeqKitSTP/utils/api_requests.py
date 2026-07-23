@@ -113,7 +113,15 @@ class SequenceAPI:
             raise TranscriptIdError(
                 f"{HGNC_ID} is not a supported HGNC ID."
             )
-
+    @staticmethod
+    def _validate_hgnc_gene_name(HGNC_gene_name):
+        """
+        Validate a hgnc gene name.
+        """
+        if HGNC_gene_name.startswith(("HGNC:")):
+            raise TranscriptIdError(
+                f"Please enter a valid gene name. {HGNC_gene_name} is a HGNC_ID"
+            )
     # ------------------------------------------------------------------
     # GenBank
     # ------------------------------------------------------------------
@@ -223,6 +231,23 @@ class SequenceAPI:
         return{
             "metadata":meta_response.json(),
         }
+    
+    def fetch_hgnc_gene_by_name(self, HGNC_gene_name):
+        """
+        Fetch HGNC gene information using gene name
+
+        Placeholder.
+        """
+        self._validate_hgnc_gene_name(HGNC_gene_name)
+
+        meta_response = self._get(
+            self._hgnc_url,
+            f"/fetch/symbol/{HGNC_gene_name}",
+            headers={"Accept": "application/json"},
+        )    
+        return{
+            "metadata":meta_response.json(),
+        }
 
 
     # ------------------------------------------------------------------
@@ -307,4 +332,15 @@ class SequenceAPI:
             "mane_select" : doc.get("mane_select"),
         }
     
-    # Examples to test code : ENST00000367770.8 (SCYL3), ENST00000420246.5 (TP53 alternative), HGNC:613(APOE).
+    def structure_HGNC_gene_by_name(self,record):
+
+        doc = record["metadata"]["response"]["docs"][0]
+
+        return{
+            "HGNC_id": doc["hgnc_id"],
+            "symbol": doc["symbol"],
+            "ensembl_gene_id": doc.get("ensembl_gene_id"),
+            "mane_select" : doc.get("mane_select"),
+        }
+    
+    # Examples to test code : ENST00000646891.2 (BRAF), ENST00000367770.8 (SCYL3), ENST00000420246.5 (TP53 alternative), HGNC:613(APOE).
