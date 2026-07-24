@@ -785,3 +785,89 @@ Traceback (most recent call last):
     raise ReadTimeout(e, request=request)
 requests.exceptions.ReadTimeout: HTTPSConnectionPool(host='rest.ensembl.org', port=443): Read timed out. (read timeout=30)
 2026-07-23 13:48:15,553 | ERROR | SeqKitSTP | An error occurred: HTTPSConnectionPool(host='rest.ensembl.org', port=443): Read timed out. (read timeout=30)
+2026-07-23 14:01:49,696 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-23 14:01:49,790 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/apoe HTTP/1.1" 200 None
+2026-07-23 14:01:55,652 | ERROR | SeqKitSTP | An error occurred: Please enter a transcript ID with a version, eg. ENST00000252486.9
+2026-07-23 14:02:00,579 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/apoe HTTP/1.1" 200 None
+2026-07-23 14:02:03,154 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-23 14:02:03,238 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000252486?content-type=application%2Fjson&expand=1 HTTP/1.1" 500 10135
+2026-07-23 14:02:03,239 | ERROR | SeqKitSTP.utils.api_requests | Failed GET request: https://rest.ensembl.org/lookup/id/ENST00000252486
+Traceback (most recent call last):
+  File "/home/sachin/STP_SE_2026/STP_SE_2026/SeqKitSTP2026/SeqKitSTP/utils/api_requests.py", line 63, in _get
+    response.raise_for_status()
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://rest.ensembl.org/lookup/id/ENST00000252486?content-type=application%2Fjson&expand=1
+2026-07-23 14:02:03,241 | ERROR | SeqKitSTP | An error occurred: 500 Server Error: Internal Server Error for url: https://rest.ensembl.org/lookup/id/ENST00000252486?content-type=application%2Fjson&expand=1
+2026-07-23 14:03:36,078 | ERROR | SeqKitSTP | An error occurred: Please enter a transcript ID with a version, eg. ENST00000252486.9
+2026-07-23 14:03:41,884 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/brca1 HTTP/1.1" 200 None
+2026-07-23 14:03:48,465 | DEBUG | urllib3.connectionpool | Resetting dropped connection: rest.ensembl.org
+2026-07-23 14:04:03,095 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000357654?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 5051
+2026-07-23 14:04:07,521 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000357654 HTTP/1.1" 200 81209
+2026-07-23 14:04:12,806 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000012048?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 39519
+2026-07-23 14:04:12,814 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-23 14:04:12,814 | INFO | SeqKitSTP | Transcription complete
+2026-07-23 14:04:12,816 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-23 14:04:12,816 | INFO | SeqKitSTP | Translation complete
+2026-07-23 14:04:12,821 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-23 14:21:21,005 | DEBUG | urllib3.connectionpool | Resetting dropped connection: rest.genenames.org
+2026-07-23 14:21:21,079 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/apoe HTTP/1.1" 200 None
+2026-07-23 14:21:26,458 | DEBUG | urllib3.connectionpool | Resetting dropped connection: rest.ensembl.org
+2026-07-23 14:21:29,625 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000252486?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 1396
+2026-07-23 14:21:46,400 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000252486 HTTP/1.1" 200 3736
+2026-07-23 14:21:53,027 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000130203?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 16645
+2026-07-23 14:21:53,029 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-23 14:21:53,029 | INFO | SeqKitSTP | Transcription complete
+2026-07-23 14:21:53,029 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-23 14:21:53,029 | INFO | SeqKitSTP | Translation complete
+2026-07-23 14:21:53,030 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-24 07:46:10,648 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-24 07:46:10,751 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/ADCY5 HTTP/1.1" 200 None
+2026-07-24 07:47:45,022 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-24 07:47:50,622 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000462833?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4691
+2026-07-24 07:47:51,549 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000462833 HTTP/1.1" 200 166935
+2026-07-24 07:47:59,954 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000173175?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 9474
+2026-07-24 07:48:00,008 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-24 07:48:00,008 | INFO | SeqKitSTP | Transcription complete
+2026-07-24 07:48:00,012 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-24 07:48:00,012 | INFO | SeqKitSTP | Translation complete
+2026-07-24 07:48:00,022 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-24 07:52:21,306 | DEBUG | urllib3.connectionpool | Resetting dropped connection: rest.ensembl.org
+2026-07-24 07:52:21,376 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000462833?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4691
+2026-07-24 07:52:21,397 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000462833 HTTP/1.1" 200 166935
+2026-07-24 07:52:21,427 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000173175?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 9474
+2026-07-24 07:52:21,463 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-24 07:52:21,463 | INFO | SeqKitSTP | Transcription complete
+2026-07-24 07:52:21,466 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-24 07:52:21,466 | INFO | SeqKitSTP | Translation complete
+2026-07-24 07:52:21,476 | INFO | SeqKitSTP | Formatting GenBank output
+2026-07-24 07:54:29,654 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/ HTTP/1.1" 400 226
+2026-07-24 07:54:29,655 | ERROR | SeqKitSTP.utils.api_requests | Failed GET request: https://rest.genenames.org/fetch/symbol/
+Traceback (most recent call last):
+  File "/home/sachin/STP_SE_2026/STP_SE_2026/SeqKitSTP2026/SeqKitSTP/utils/api_requests.py", line 63, in _get
+    response.raise_for_status()
+  File "/home/sachin/miniconda3/envs/seqkit2026/lib/python3.12/site-packages/requests/models.py", line 1167, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 400 Client Error: Bad Request for url: https://rest.genenames.org/fetch/symbol/
+2026-07-24 07:54:29,656 | ERROR | SeqKitSTP | An error occurred: 400 Client Error: Bad Request for url: https://rest.genenames.org/fetch/symbol/
+2026-07-24 07:54:53,120 | ERROR | SeqKitSTP | Start codon not found
+2026-07-24 07:54:53,121 | ERROR | SeqKitSTP | An error occurred: Start codon aug not found
+2026-07-24 07:55:16,269 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-24 07:55:16,269 | INFO | SeqKitSTP | Translation complete
+2026-07-24 07:58:45,457 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-07-24 07:58:53,244 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-24 07:58:53,245 | INFO | SeqKitSTP | Translation complete
+2026-07-24 08:01:37,118 | INFO | SeqKitSTP | Exiting SeqKitSTP
+2026-07-24 08:02:05,520 | INFO | SeqKitSTP | Translated sequence written to translated_sequence.txt
+2026-07-24 08:02:05,521 | INFO | SeqKitSTP | Translation complete
+2026-07-24 08:03:39,638 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.genenames.org:443
+2026-07-24 08:03:39,724 | DEBUG | urllib3.connectionpool | https://rest.genenames.org:443 "GET /fetch/symbol/ADCY5 HTTP/1.1" 200 None
+2026-07-24 08:03:45,703 | ERROR | SeqKitSTP | An error occurred: 'ENST00000462833 is not a supported Ensembl transcript.
+2026-07-24 08:03:52,499 | ERROR | SeqKitSTP | An error occurred: 'ENST00000462833 is not a supported Ensembl transcript.
+2026-07-24 08:04:19,787 | DEBUG | urllib3.connectionpool | Starting new HTTPS connection (1): rest.ensembl.org:443
+2026-07-24 08:04:22,008 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /lookup/id/ENST00000462833?content-type=application%2Fjson&expand=1 HTTP/1.1" 200 4691
+2026-07-24 08:04:22,196 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /sequence/id/ENST00000462833 HTTP/1.1" 200 166935
+2026-07-24 08:04:22,804 | DEBUG | urllib3.connectionpool | https://rest.ensembl.org:443 "GET /overlap/id/ENSG00000173175?feature=transcript&content-type=application%2Fjson&expand=1 HTTP/1.1" 200 9474
+2026-07-24 08:04:22,847 | INFO | SeqKitSTP | Transcribed sequence written to transcribed_sequence.txt
+2026-07-24 08:04:22,847 | INFO | SeqKitSTP | Transcription complete
+2026-07-24 08:04:22,847 | ERROR | SeqKitSTP | An error occurred: translate() missing 2 required positional arguments: 'CDS_start' and 'CDS_end'

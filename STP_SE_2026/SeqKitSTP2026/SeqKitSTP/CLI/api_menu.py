@@ -6,6 +6,18 @@ from SeqKitSTP.modules.genify_sequence import genify_seq
 import logging
 logger = logging.getLogger(__name__)
 
+"""
+SE things left to do.
+
+I didn't find a way around getting the exact version in GRCH38 of ENSEMBL in the API call in api_request.py
+
+Translate function is not setup to handle input from api_requests.py, add a new function.
+
+Needs better test coverage.
+
+Needs logging of user choices and even the inputs maybe? For traceabillity
+"""
+
 api = SequenceAPI()
 
 def run_api_menu():
@@ -93,8 +105,8 @@ def run_api_menu():
                 sequence = structured_record['sequence']
                 rna_sequence = transcribe(sequence)
                 translate(rna_sequence,"","") 
-                #using default here for now but would be better to slice out the codons based on CDS_start and CDS end.
-                #Because at the moment it is just stopping at the first uga?
+                #This needs to be fixed, the translater function accepts start/end codons and currently it cuts the sequence short as it looks for aug and uga (defaults).
+                #Correct way : slice the transcribed sequence here and just feed to be translated. Maybe make a secondary function within translater.py?
 
                 blocked_sequence = blockify_seq(sequence,5)
                 output_file_blocked = "blocked_sequence.txt"
