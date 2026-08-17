@@ -153,7 +153,7 @@ class SequenceAPI:
         """
         Fetch Ensembl transcript information.
 
-        Because default is current version and I have not found a work around to deal with specific versions, 
+        Because default is latest version and I have not found a work around to deal with specific versions, 
         I added a disclaimer if the version the user enters is not a match with the latest. It seems like I 
         would need to know the exact release for a particular version which seems a bit complex so leaving it out for now.
         """
@@ -185,7 +185,7 @@ class SequenceAPI:
         """
         Fetch Ensembl transcript information for GRCh37
         
-        Because default is current version and I have not found a work around to deal with specific versions, 
+        Because default is latest version and I have not found a work around to deal with specific versions, 
         I will add a disclaimer if the version the user enters is not a match with the latest. It seems like I
         would need to know the exact release for a particular version which seems a bit complex so leaving it out for now.
 
@@ -234,7 +234,6 @@ class SequenceAPI:
         """
         Fetch HGNC gene information using gene name
 
-        Placeholder.
         """
         self._validate_hgnc_gene_name(HGNC_gene_name)
 
@@ -281,7 +280,7 @@ class SequenceAPI:
 
     def extract_mane(self, record):
         metadata = record["metadata"]
-        gene_id = metadata["Parent"]
+        gene_id = metadata["Parent"] #Extracting the ensemble ID.
 
         tx_response = self._get(
             self._ensembl_url,
@@ -292,7 +291,7 @@ class SequenceAPI:
         transcripts = tx_response.json()
         
         for tx in transcripts:
-            if "tag" in tx and "MANE_Select" in tx["tag"]:
+            if "tag" in tx and "MANE_Select" in tx["tag"]:#Looping through the tag key to find "MANE_Select" and extract its ID only.
                 return tx["id"]
         return None
 
